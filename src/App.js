@@ -18,10 +18,11 @@ import TvDetail from "./pages/TvDetail/TvDetail";
 import { HashRouter } from "react-router-dom/cjs/react-router-dom";
 import PeopleDetail from "./pages/PeopleDetail/PeopleDetail";
 import SeasonDetail from "./pages/SeasonDetail/SeasonDetail";
+import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 function App() {
   return (
     // <BrowserRouter>
-    <HashRouter>
+    <BrowserRouter basename="movie-database-redux">
       <div className="App" id="dimScreen">
         <Provider store={store}>
           <div>
@@ -54,7 +55,7 @@ function App() {
           </div>
         </Provider>
       </div>
-    </HashRouter>
+    </BrowserRouter>
     // </BrowserRouter>
   );
 }
