@@ -22,7 +22,7 @@ import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 function App() {
   return (
     // <BrowserRouter>
-    <BrowserRouter basename="movie-database-redux">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className="App" id="dimScreen">
         <Provider store={store}>
           <div>
