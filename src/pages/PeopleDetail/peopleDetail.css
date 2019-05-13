@@ -1,0 +1,31 @@
+.people-wrapper {
+  width: 80%;
+  margin: 5vh auto;
+  display: flex;
+  flex: 0 0 50%;
+}
+
+.people-block {
+  display: inline-block;
+  width: 10vh;
+  flex: 1;
+  height: 10vh;
+  /* border: 2px solid black; */
+  margin: 5px auto;
+}
+
+.people-image-wrapper {
+  margin-right: 2vh;
+}
+
+.people-preview {
+  height: 30vh;
+}
+
+.people-name {
+  font-size: 4vh;
+}
+
+.people-age {
+  font-size: 2vh;
+}

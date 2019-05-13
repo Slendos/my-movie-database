@@ -1,0 +1,60 @@
+/* .movie-div {
+  height: 250px;
+  width: 95px;
+  opacity: 0.6;
+  transition: transform 300ms;
+  transform: scale(0.95);
+  margin: 0 10px;
+}
+
+.movie-div:hover {
+  height: 250px;
+  width: 95px;
+  opacity: 1;
+  transition: transform 300ms;
+  transform: scale(1);
+} */
+
+.movie-div {
+  text-align: left;
+  opacity: 0.7;
+  transition: transform 300ms;
+  transform: scale(0.95);
+  color: white;
+  margin-top: 1vh;
+}
+
+.movie-div:hover {
+  opacity: 1;
+  transition: transform 300ms;
+  transform: scale(1);
+}
+
+.movie-preview {
+  height: 180px;
+  /* width: 100px; */
+  border-radius: 5px;
+  text-align: left;
+}
+
+.movie-title {
+  /* position: absolute; */
+  color: black;
+  font-size: 20px;
+  /* top: 0;
+  left: 0; */
+}
+
+.movie-rating {
+  /* position: absolute; */
+  color: black;
+  font-size: 15px;
+  /* top: 20;
+  left: 0; */
+}
+
+.movie-name {
+  text-align: left;
+  margin: 0 auto;
+  padding: 0 15px;
+}

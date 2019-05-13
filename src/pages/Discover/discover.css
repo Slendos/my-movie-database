@@ -1,0 +1,52 @@
+.genres-wrapper {
+  text-align: left;
+  margin: 2vh auto;
+  width: 80%;
+  min-height: 100%;
+  list-style: none;
+  font-size: 1.5vh;
+}
+
+.genre-item {
+  display: inline-block;
+  border: 2px solid black;
+  margin: 10px 2vh;
+  background-color: grey;
+  padding: 1vh 2vh;
+  border-radius: 15px;
+}
+
+.genre-item:hover {
+  background-color: red;
+}
+
+.discover-form-wrapper {
+  width: 78%;
+  margin: 0 auto;
+}
+
+.discover-form {
+  width: 240px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.discover-input {
+  border-radius: 20px;
+  border: none;
+  height: 3vh;
+  padding: 1vh 2vh;
+  width: 240px;
+  color: black;
+}
+
+.discover-btn {
+  position: absolute;
+  right: -1px;
+  top: -1px;
+  height: 3.2vh;
+  width: 3.1vh;
+  border-radius: 20px;
+  border: none;
+  background-color: brown;
+}

@@ -1,0 +1,30 @@
+.season-wrapper {
+  width: 80%;
+  margin: 5vh auto;
+  text-align: left;
+  padding-left: 3vh;
+}
+
+.season-description {
+  display: inline-block;
+  margin-left: 10vh;
+}
+
+.season-title {
+  margin-bottom: 2vh;
+  font-size: 3vh;
+}
+
+.season-overview {
+  display: block;
+  width: 50vh;
+}
+
+.episodes-wrapper {
+  display: flex;
+  min-height: 100%;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  text-align: middle;
+}

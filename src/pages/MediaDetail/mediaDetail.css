@@ -1,0 +1,48 @@
+.main {
+  background-color: linear-gradient(165deg, #251431 0%, #161130 62%);
+}
+
+article {
+  width: 80%;
+  margin: 10vh auto;
+}
+
+.spoken-language {
+}
+
+.overview-main {
+  margin-top: 2vh;
+  text-align: left;
+}
+
+.overview-description {
+  width: 60%;
+  text-align: left;
+}
+
+.description-release {
+  font-size: 2vh;
+}
+
+.cover {
+  background-size: cover !important;
+}
+
+.preview-image {
+}
+
+.review-wrapper {
+  height: 15vh;
+  width: 100%;
+  padding: 2vh;
+  background-color: #13111d;
+  margin: 2vh 0;
+}
+
+.review-wrapper:nth-child(odd) {
+  border-right: 4px solid grey;
+}
+
+.review-wrapper:nth-child(even) {
+  border-left: 4px solid grey;
+}

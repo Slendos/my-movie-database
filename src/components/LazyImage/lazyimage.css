@@ -1,0 +1,18 @@
+.loadingImg {
+  display: none;
+}
+
+.movie-genres {
+  text-align: left;
+  font-size: 12px;
+  width: 90px;
+}
+
+.movie-name {
+  text-align: left;
+  width: 90px;
+}
+
+.comma {
+  padding-top: 9vh;
+}

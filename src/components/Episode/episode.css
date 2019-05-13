@@ -1,0 +1,26 @@
+.episode-wrapper {
+  width: 28vh;
+  height: 41.2vh;
+
+  /* border: 2px solid white; */
+}
+
+.episode-number {
+  width: 100%;
+  background: #0b1123;
+  height: 3vh;
+  margin-bottom: 1vh;
+  font-size: 2vh;
+}
+
+.episode-name {
+  font-size: 2.5vh;
+  margin-top: 1.5vh;
+}
+
+.episode-overview {
+  text-align: left;
+  margin-top: 1vh;
+  padding: 0 2vh;
+  padding-bottom: 3vh;
+}

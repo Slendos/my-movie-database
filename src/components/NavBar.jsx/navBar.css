@@ -1,0 +1,64 @@
+.navbar {
+  position: fixed;
+  background-color: #1c262b;
+  width: 100%;
+  opacity: 1;
+}
+
+.input-text {
+  padding: 5px 10px;
+  margin: 0;
+  border: none;
+  border-radius: 20px;
+  height: 3vh;
+  vertical-align: middle;
+  text-decoration: none;
+  color: black;
+}
+
+.input-submit {
+  padding: 0;
+  margin: 0;
+  height: 3vh;
+  width: 3vh;
+  vertical-align: middle;
+  border-left: none;
+  background: none;
+  border-radius: 20px;
+  border: 2px solid grey;
+}
+
+.form-input {
+  display: inline-block;
+  line-height: 0;
+}
+
+.form-search {
+  margin: 0 auto;
+  margin-top: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.form-button {
+  position: absolute;
+  right: 0;
+}
+
+.input-submit {
+  background-color: orange;
+  border: none;
+}
+
+.discover-link {
+  height: 3vh;
+  width: 3vh;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+
+.navbar-wrapper {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
