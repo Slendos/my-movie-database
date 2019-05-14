@@ -94,8 +94,7 @@
 
 .movie-preview {
   z-index: 500;
-  height: 200px !important;
-  width: 133.3px !important;
+  height: 23vh !important;
 }
 
 .description-main {
@@ -112,4 +111,30 @@
 
 .slideshow-title {
   font-size: 2.2vh;
+}
+
+.slideshow-background {
+  position: absolute;
+  background-size: cover !important;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+}
+
+.description-wrapper {
+  position: absolute;
+  bottom: 40vh;
+  left: 20vh;
+  z-index: 500;
+  text-align: left;
+}
+
+.description-title-wrapper {
+  text-align: left;
+  width: 150px;
+  height: 200px;
+  display: inline-block;
+  float: left;
+  flex-grow: 1;
+  flex-shrink: 0;
 }

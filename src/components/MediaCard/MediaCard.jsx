@@ -4,7 +4,15 @@ import LazyImage from "../LazyImage/LazyImage";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 
 const imagesUrl = "https://image.tmdb.org/t/p/original";
+const imgUrlW500 = "https://image.tmdb.org/t/p/w200";
 const MediaCard = ({ movie, genres, imgPath, type, movieId }) => {
+  const getUrl = type => {
+    if ((type = "tv")) {
+      return "https://image.tmdb.org/t/p/w500";
+    } else {
+      return imgUrlW500;
+    }
+  };
   return (
     <Fragment>
       <LazyLoad height={150}>
@@ -18,7 +26,7 @@ const MediaCard = ({ movie, genres, imgPath, type, movieId }) => {
             key={movie.id}
           >
             <LazyImage
-              url={imagesUrl + movie[imgPath]}
+              url={getUrl(type) + movie[imgPath]}
               data={movie}
               imgClass="movie-preview"
               genres={genres}
@@ -33,7 +41,7 @@ const MediaCard = ({ movie, genres, imgPath, type, movieId }) => {
             key={movie.id}
           >
             <LazyImage
-              url={imagesUrl + movie[imgPath]}
+              url={getUrl(type) + movie[imgPath]}
               data={movie}
               imgClass="movie-preview"
               genres={genres}

@@ -19,11 +19,9 @@ class TvDetail extends MediaExtend {
   componentDidMount() {
     const { detail } = this.props;
     const numberOfSeasons = detail.number_of_seasons;
-    console.log("datatv", numberOfSeasons);
     window.scroll(0, 0);
     let id = this.props.location.state.data.id;
     this.props.fetchSingleMedia("tv", id);
-    console.log("ID", this.props);
     this.props.fetchGenres();
     this.props.fetchTvDetails(id, "credits");
     this.props.fetchTvDetails(id, "videos");
@@ -57,10 +55,7 @@ class TvDetail extends MediaExtend {
     const { data } = this.props.location.state;
     const { genres, tvDetail, detail } = this.props;
     const { seasons } = detail;
-    console.log("genres", genres, tvDetail);
-    console.log("DATATV", detail, seasons);
     const numberOfSeasons = detail.number_of_seasons;
-    console.log("DATATV", numberOfSeasons, seasons);
     return (
       <div style={{ paddingTop: "5vh" }}>
         {this.renderBackground(data, genres, "tv")}

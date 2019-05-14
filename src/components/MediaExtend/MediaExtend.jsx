@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 const imgUrl = "https://image.tmdb.org/t/p/original";
+const smallUrl = "https://image.tmdb.org/t/p/w200";
 class MediaExtend extends Component {
   state = {
     loading: true
@@ -67,7 +68,7 @@ class MediaExtend extends Component {
               <div className="preview-title">
                 <div className="preview-image">
                   <img
-                    src={imgUrl + data.poster_path}
+                    src={smallUrl + data.poster_path}
                     alt=""
                     className="movie-preview"
                   />
@@ -84,7 +85,6 @@ class MediaExtend extends Component {
                       {data.original_language}
                       <br />
                       {<i style={{ fontSize: "1.5vh" }}>{data.tagline}</i>}
-                      {console.log("DATA", data)}
                     </span>
                   </div>
                 </div>
@@ -100,7 +100,9 @@ class MediaExtend extends Component {
     return (
       <Fragment>
         <div style={{ textAlign: "left", fontSize: "4vh" }}>Overview</div>{" "}
-        <div className="tv-overview">{overview}</div>
+        <div className="tv-overview" style={{ overflow: "auto" }}>
+          {overview}
+        </div>
       </Fragment>
     );
   }
@@ -109,7 +111,7 @@ class MediaExtend extends Component {
     return (
       <div>
         {video.results && video.results[0] && (
-          <div style={{ height: "400px" }}>
+          <div style={{ height: "40vh" }}>
             <iframe
               frameBorder="0"
               style={{ height: "40vh" }}

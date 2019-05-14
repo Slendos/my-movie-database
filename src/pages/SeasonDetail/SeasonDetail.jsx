@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Episode from "../../components/Episode/Episode";
 import "./seasonDetail.css";
 const imgUrl = "https://image.tmdb.org/t/p/original";
+const smallUrl = "https://image.tmdb.org/t/p/w500";
 class SeasonDetail extends Component {
   state = {
     seasonDetail: null
@@ -23,12 +24,12 @@ class SeasonDetail extends Component {
   render() {
     const data = this.props.location.state.data;
     const { seasonDetail } = this.state;
-    console.log("episodes", seasonDetail);
+
     return (
       <div style={{ paddingTop: "5vh", minHeight: "100%" }}>
         <div className="season-wrapper">
           <img
-            src={imgUrl + data.poster_path}
+            src={smallUrl + data.poster_path}
             alt=""
             className="people-preview"
             style={{ display: "inline-block", verticalAlign: "top" }}

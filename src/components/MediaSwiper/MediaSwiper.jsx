@@ -10,19 +10,20 @@ const MediaSwiper = ({
   genres,
   title
 }) => {
-  console.log(titles, "titles");
-  const component = titles.map((title, index) => (
-    <SwiperContainer
-      movie={mediaType[types[index]].results}
-      genres={genres || null}
-      title={title}
-      imgPath={imgPath}
-      type={type}
-    />
-  ));
   return (
     <div>
-      <div className="section-title">{title}</div> <div>{component}</div>
+      <div className="section-title">{title}</div>
+      <div>
+        {titles.map((title, index) => (
+          <SwiperContainer
+            movie={mediaType[types[index]].results}
+            genres={genres || null}
+            title={title}
+            imgPath={imgPath}
+            type={type}
+          />
+        ))}
+      </div>
     </div>
   );
 };

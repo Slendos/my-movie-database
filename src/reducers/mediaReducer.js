@@ -23,7 +23,6 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-  console.log("mediaType", action.mediaType, state);
   switch (action.type) {
     case FETCH_MEDIA:
       // [action.mediaType] {}

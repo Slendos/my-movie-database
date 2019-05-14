@@ -4,6 +4,11 @@ import "./lazyimage.css";
 import image from "../../images/blank_profile.png";
 import { Link } from "react-router-dom";
 import genresReducer from "../../reducers/genresReducer";
+import Rating from "../Rating/Rating";
+import MediaTitle from "../MediaTitle/MediaTitle";
+import MediaAirDate from "../MediaAirDate/MediaAirDate";
+import MediaCharacter from "../MediaCharacter/MediaCharacter";
+
 const LazyImage = ({ url, imgClass, data, genres, imgPath, type }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -17,7 +22,6 @@ const LazyImage = ({ url, imgClass, data, genres, imgPath, type }) => {
         finished = true;
       }
       let r = genres.filter(genre => genre.id === id);
-      console.log(r);
       return (
         <span className="movie-genre" key={index}>
           {r[0] && r[0].name}{" "}
@@ -26,8 +30,7 @@ const LazyImage = ({ url, imgClass, data, genres, imgPath, type }) => {
       );
     });
   };
-  console.log("IMG PATH", imgPath);
-  console.log("hovno!!!!", data);
+
   return (
     <React.Fragment>
       {!error && (
@@ -46,34 +49,17 @@ const LazyImage = ({ url, imgClass, data, genres, imgPath, type }) => {
         <img
           src={image}
           className={imgClass}
-          style={{ height: "171px", width: "114px" }}
+          style={{ height: "2.5vh", width: "15vh" }}
         />
       )}
       {!loading && <LoadingSpinner />}
       <br />
-      {loading && data.vote_average && (
-        <span style={{ fontWeight: "bold" }}>
-          {" "}
-          <i className="fas fa-star" style={{ color: "red" }} />
-          {" " + data.vote_average}
-          <br />
-        </span>
-      )}
-      {loading && <span>{data.title || data.name}</span>}
+      {loading && data.vote_average && <Rating rating={data.vote_average} />}
+      {loading && <MediaTitle title={data.title || data.name} />}
       {loading && data.character && (
-        <Fragment>
-          <br />
-          <span>
-            <i> as {data.character}</i>
-          </span>
-        </Fragment>
+        <MediaCharacter character={data.character} />
       )}
-      {loading && data.air_date && (
-        <Fragment>
-          <br />
-          <span>{data.air_date}</span>
-        </Fragment>
-      )}
+      {loading && data.air_date && <MediaAirDate date={data.air_date} />}
       {loading && genres && (
         <div className="movie-genres"> {getGenres(data.genre_ids, genres)}</div>
       )}

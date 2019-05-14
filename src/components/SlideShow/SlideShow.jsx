@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import "./slideShow.css";
 const imagesUrl = "https://image.tmdb.org/t/p/original";
-
+const smallImage = "https://image.tmdb.org/t/p/w500";
 const SlideShow = ({ data }) => {
   const [index, setIndex] = useState(0);
 
@@ -26,67 +26,34 @@ const SlideShow = ({ data }) => {
       // let image = <img src={imgUrl} className="preview-image" />;
       let background = (
         <div
-          className="preview-image"
+          className="preview-image slideshow-background"
           style={{
-            position: "absolute",
-            background: `linear-gradient(0deg, rgb(0, 0, 0) 5%, rgba(0, 0, 0, 0.45) 92%) center center no-repeat, url(${imgUrl}) center top no-repeat rgb(255, 255, 255)`,
-            backgroundSize: "cover",
-            height: "100vh",
-            width: "100%",
-            zIndex: "1"
+            background: `linear-gradient(0deg, rgb(0, 0, 0) 5%, rgba(0, 0, 0, 0.45) 92%) center center no-repeat, url(${imgUrl}) center top no-repeat rgb(255, 255, 255)`
           }}
         >
-          <div
-            style={{
-              position: "absolute",
-              bottom: "40vh",
-              left: "20vh",
-              zIndex: 500,
-              textAlign: "left"
-            }}
-          >
+          <div className="description-wrapper">
             <span className="slideshow-title">
               <i>NOW PLAYING</i>
             </span>
           </div>
           <div className="preview-title">
-            <div
-              style={{
-                textAlign: "left",
-                width: "150px",
-                height: "200px",
-                display: "inline-block",
-                float: "left",
-                flexGrow: 1,
-                flexShrink: 0
-              }}
-            >
+            <div className="description-title-wrapper">
               <img
-                src={imagesUrl + data[index].poster_path}
+                src={smallImage + data[index].poster_path}
                 className="movie-preview"
-                style={{
-                  width: "150px",
-                  height: "200px",
-                  zIndex: 999
-                }}
               />
             </div>
-            <div
-              className="description-main"
-              style={{ display: "inline-block" }}
-            >
+            <div className="description-main">
               <span className="description-title">
                 {data[index].title || data[index].original_name}
+                <br />
               </span>
-              <br />
               <span className="description-rating" style={{ fontSize: "2vh" }}>
                 <i className="fas fa-star" style={{ color: "red" }} />
                 {" " + data[index].vote_average}
+                <br />
               </span>
-              {/* <div style={{ display: "block" }}> */}
-              <br />{" "}
               <span style={{ fontSize: "2vh" }}>{data[index].overview}</span>
-              {/* </div> */}
             </div>
           </div>
         </div>
@@ -94,10 +61,7 @@ const SlideShow = ({ data }) => {
       return background;
     });
   };
-
   let slides = getImages();
-  // if (images[index] === undefined) return <div>Loading..</div>;
-  //   const image = imagesUrl + current.backdrop_path;
   return (
     <React.Fragment>
       <TransitionGroup className="card-container">
@@ -105,8 +69,8 @@ const SlideShow = ({ data }) => {
           key={index}
           timeout={3000}
           classNames="fade"
-          // appear={true}
-          // exit={true}
+          appear={true}
+          exit={true}
         >
           <div style={{ position: "absolute", width: "100%" }}>
             {slides[index]}

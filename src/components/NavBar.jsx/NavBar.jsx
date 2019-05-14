@@ -19,34 +19,14 @@ class NavBar extends Component {
     console.log(e, this.props, "history");
   };
   render() {
-    if (this.state.submitted) {
-      console.log("submitted");
-    }
     return (
       <Fade down>
         <div className="navbar">
           <div style={{ display: "inline-block" }} />
           <div className="navbar-wrapper" style={{ display: "inline-block" }}>
-            {/* <div className="home-wrapper">
-            
-          </div> */}
-            <div
-              style={{
-                textAlign: "left",
-                display: "inline-block",
-                float: "left"
-              }}
-            >
+            <div className="nav-icon-wrapper">
               <Link to="/">
-                <img
-                  src={icon}
-                  alt=""
-                  style={{
-                    width: "50px",
-                    paddingTop: "2px",
-                    cursor: "pointer"
-                  }}
-                />
+                <img src={icon} alt="" className="nav-icon" />
               </Link>
             </div>
             <div className="form-search">
@@ -73,9 +53,7 @@ class NavBar extends Component {
                 </div>
               </form>
             </div>
-            {/* <div className="discover-link" /> */}
           </div>
-          {/* <div style={{ float: "right" }}>Discover</div> */}
         </div>
       </Fade>
     );

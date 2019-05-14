@@ -4,7 +4,7 @@ import "react-perfect-scrollbar/dist/css/styles.css";
 import PerfectScrollbar from "react-perfect-scrollbar";
 
 import "./episode.css";
-const imgUrl = "https://image.tmdb.org/t/p/original";
+const imgUrl = "https://image.tmdb.org/t/p/w500";
 const Episode = ({ data }) => {
   return (
     <Fade up>
@@ -19,7 +19,7 @@ const Episode = ({ data }) => {
       >
         <PerfectScrollbar>
           <div className="episode-wrapper">
-            <div>{console.log(data)}</div>
+            {/* <div>{console.log(data)}</div> */}
             <div className="episode-number">{data.episode_number}</div>
             <div>
               <img
@@ -29,7 +29,7 @@ const Episode = ({ data }) => {
               />
             </div>
             <div className="episode-name">{data.name}</div>
-            {data.vote_average && (
+            {data.vote_average && data.vote_average !== 0 && (
               <div className="episode-rating">
                 <i className="fas fa-star" style={{ color: "red" }} />
                 {" " + data.vote_average.toFixed(2)}

@@ -11,6 +11,7 @@ import { fetchGenres } from "../../actions/genresActions";
 import "./media.css";
 import MediaSwiper from "../MediaSwiper/MediaSwiper";
 import Fade from "react-reveal/Fade";
+import MediaNavigation from "../MediaNavigation/MediaNavigation";
 class Media extends Component {
   state = {
     time: "week",
@@ -63,65 +64,22 @@ class Media extends Component {
 
     return (
       <div>
-        {console.log("data", movie)}
         <div style={{ height: "100vh", width: "100%" }}>
-          <div
-            style={{
-              height: "100vh",
-              position: "absolute",
-              zIndex: 20,
-              width: "100%"
-            }}
-          >
+          <div className="slideshow-wrapper-main">
             {this.props.movie["now_playing"] &&
               this.props.movie["now_playing"].results !== undefined && (
                 <Fade left>
                   <SlideShow data={this.props.movie["now_playing"].results} />
                 </Fade>
               )}
-            {/* )} */}
           </div>
         </div>
-        <div>{console.log(movie, genres)}</div>
 
         <Fragment>
-          <Fade up>
-            <div className="navigation-main">
-              <div
-                onClick={() => this.handleSwitch("all")}
-                key="all"
-                className={`navigation-div ${"all" === this.state.media &&
-                  "active"}`}
-              >
-                All
-              </div>
-              <div
-                className={`navigation-div ${"tv" === this.state.media &&
-                  "active"}`}
-                onClick={() => this.handleSwitch("tv")}
-                key="tv"
-              >
-                TV
-              </div>
-              <div
-                className={`navigation-div ${"movie" === this.state.media &&
-                  "active"}`}
-                onClick={() => this.handleSwitch("movie")}
-                key="movie"
-              >
-                Movie
-              </div>
-              <div
-                className={`navigation-div ${"person" === this.state.media &&
-                  "active"}`}
-                onClick={() => this.handleSwitch("person")}
-                key="person"
-              >
-                People
-              </div>
-            </div>
-          </Fade>
-
+          <MediaNavigation
+            handleSwitch={this.handleSwitch}
+            media={this.state.media}
+          />
           {(this.state.media == "movie" || this.state.media == "all") && (
             <MediaSwiper
               mediaType={this.props.movie}

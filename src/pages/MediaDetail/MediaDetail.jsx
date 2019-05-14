@@ -12,13 +12,11 @@ import SwiperContainer from "../../components/SwiperContainer/SwiperContainer";
 import Review from "../../components/Review/Review";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
-
+const smallUrl = "https://image.tmdb.org/t/p/w200";
 class MediaDetail extends MediaExtend {
   componentDidMount() {
     window.scroll(0, 0);
     let id = this.props.location.state.data.id;
-    console.log("STATE", this.props);
-    console.log("ID", id, this.props.location.state.data);
     this.props.fetchSingleMedia("movie", id);
     this.props.fetchGenres();
     this.props.fetchMovieDetails(id, "credits");

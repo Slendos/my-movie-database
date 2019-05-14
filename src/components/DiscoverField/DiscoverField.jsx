@@ -4,7 +4,7 @@ import MediaCard from "../MediaCard/MediaCard";
 import { Pagination } from "antd";
 import "./discoverField.css";
 import "antd/dist/antd.css";
-const imgUrl = "https://image.tmdb.org/t/p/original";
+const imgUrl = "https://image.tmdb.org/t/p/w200";
 class DiscoverField extends Component {
   render() {
     const {
