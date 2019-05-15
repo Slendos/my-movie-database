@@ -25,36 +25,28 @@ class Media extends Component {
     const movieTypes = ["top_rated", "popular", "upcoming", "now_playing"];
     const tvTypes = ["airing_today", "on_the_air", "popular", "top_rated"];
     const peopleTypes = ["popular"];
+    const { fetchMovie, fetchPerson, fetchTv, fetchGenres } = this.props;
+
     window.scroll(0, 0);
-    this.props.fetchGenres();
+    fetchGenres();
     for (let i in movieTypes) {
-      this.props.fetchMovie(movieTypes[i]);
+      fetchMovie(movieTypes[i]);
     }
     for (let i in tvTypes) {
-      this.props.fetchTv(tvTypes[i]);
+      fetchTv(tvTypes[i]);
     }
     for (let i in peopleTypes) {
-      this.props.fetchPerson(peopleTypes[i]);
+      fetchPerson(peopleTypes[i]);
     }
   }
 
-  // shouldComponentUpdate(nextState) {
-  //   // if (nextState.time !== this.state.time) return true;
-  //   // return false;
-  // }
-
   handleSwitch = type => {
-    // if (this.state.time === "week") {
-    //   this.setState({ time: "day" });
-    // } else if (this.state.time === "day") {
-    //   this.setState({ time: "week" });
-    // }
-
     this.setState({ media: type });
   };
 
   render() {
-    const { genres, day, week, movie, person, tv } = this.props;
+    const { genres } = this.props;
+    const { media } = this.state;
     const movieTypes = ["popular", "top_rated", "upcoming", "now_playing"];
     const movieTitles = ["popular", "top rated", "upcoming", "now playing"];
     const personTypes = ["popular"];
@@ -76,11 +68,8 @@ class Media extends Component {
         </div>
 
         <Fragment>
-          <MediaNavigation
-            handleSwitch={this.handleSwitch}
-            media={this.state.media}
-          />
-          {(this.state.media == "movie" || this.state.media == "all") && (
+          <MediaNavigation handleSwitch={this.handleSwitch} media={media} />
+          {(media === "movie" || media === "all") && (
             <MediaSwiper
               mediaType={this.props.movie}
               titles={movieTitles}
@@ -91,7 +80,7 @@ class Media extends Component {
               title="Movies"
             />
           )}
-          {(this.state.media == "tv" || this.state.media == "all") && (
+          {(media === "tv" || media === "all") && (
             <MediaSwiper
               mediaType={this.props.tv}
               titles={tvTitles}
@@ -102,7 +91,7 @@ class Media extends Component {
               title="TV"
             />
           )}
-          {(this.state.media == "person" || this.state.media == "all") && (
+          {(media === "person" || media === "all") && (
             <MediaSwiper
               mediaType={this.props.person}
               titles={personTitles}

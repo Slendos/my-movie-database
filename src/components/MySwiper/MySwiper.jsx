@@ -1,6 +1,5 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import Swiper from "react-id-swiper";
-// Need to add Pagination, Navigation modules
 import { Navigation } from "swiper/dist/js/swiper.esm";
 import "./mySwiper.css";
 import MediaCard from "../MediaCard/MediaCard";

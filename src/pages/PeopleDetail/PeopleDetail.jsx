@@ -1,34 +1,37 @@
-import React, { Component } from "react";
+import React from "react";
 import MediaExtend from "../../components/MediaExtend/MediaExtend";
-import "./peopleDetail.css";
+import Fade from "react-reveal/Fade";
+import LazyLoad from "react-lazyload";
+import { connect } from "react-redux";
+
 import {
   fetchSingleMedia,
   cleanDetails
 } from "../../actions/singleMediaActions";
-import { connect } from "react-redux";
-import LazyLoad from "react-lazyload";
-import Placeholder from "../../components/Placeholder/Placeholder";
 import { fetchPersonDetails } from "../../actions/mediaActions";
-import Fade from "react-reveal/Fade";
+
+import Placeholder from "../../components/Placeholder/Placeholder";
 import SwiperContainer from "../../components/SwiperContainer/SwiperContainer";
+
+import "./peopleDetail.css";
 const imgUrl = "https://image.tmdb.org/t/p/w300";
 class PeopleDetail extends MediaExtend {
   componentDidMount() {
-    let id = this.props.location.state.data.id;
-    this.props.fetchSingleMedia("person", id);
-    this.props.fetchPersonDetails(id, "tv_credits");
-    this.props.fetchPersonDetails(id, "movie_credits");
+    const { fetchSingleMedia, fetchPersonDetails, location } = this.props;
+    let id = location.state.data.id;
+    fetchSingleMedia("person", id);
+    fetchPersonDetails(id, "tv_credits");
+    fetchPersonDetails(id, "movie_credits");
   }
 
   componentDidUpdate(prevProps) {
     window.scroll(0, 0);
-    let id = this.props.location.state.data.id;
-    if (
-      prevProps.location.state.data.id !== this.props.location.state.data.id
-    ) {
-      this.props.fetchSingleMedia("person", id);
-      this.props.fetchPersonDetails(id, "tv_credits");
-      this.props.fetchPersonDetails(id, "movie_credits");
+    const { fetchSingleMedia, fetchPersonDetails, location } = this.props;
+    let id = location.state.data.id;
+    if (prevProps.location.state.data.id !== location.state.data.id) {
+      fetchSingleMedia("person", id);
+      fetchPersonDetails(id, "tv_credits");
+      fetchPersonDetails(id, "movie_credits");
     }
   }
 

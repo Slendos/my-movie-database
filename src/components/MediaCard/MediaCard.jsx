@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 import LazyLoad from "react-lazyload";
 import LazyImage from "../LazyImage/LazyImage";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 
-const imagesUrl = "https://image.tmdb.org/t/p/original";
+// const imagesUrl = "https://image.tmdb.org/t/p/original";
 const imgUrlW500 = "https://image.tmdb.org/t/p/w200";
 const MediaCard = ({ movie, genres, imgPath, type, movieId }) => {
   const getUrl = type => {

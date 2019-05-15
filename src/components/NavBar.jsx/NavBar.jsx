@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router";
 import "./navBar.css";
 import icon from "../../images/filmIcon.png";
 import { Link } from "react-router-dom/cjs/react-router-dom";

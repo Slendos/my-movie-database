@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import MediaExtend from "../../components/MediaExtend/MediaExtend";
 import {
   fetchSingleMedia,
@@ -11,31 +11,36 @@ import "./mediaDetail.css";
 import SwiperContainer from "../../components/SwiperContainer/SwiperContainer";
 import Review from "../../components/Review/Review";
 
-const imgUrl = "https://image.tmdb.org/t/p/original";
-const smallUrl = "https://image.tmdb.org/t/p/w200";
+// const imgUrl = "https://image.tmdb.org/t/p/original";
+// const smallUrl = "https://image.tmdb.org/t/p/w200";
 class MediaDetail extends MediaExtend {
   componentDidMount() {
+    const {
+      fetchSingleMedia,
+      fetchMovieDetails,
+      fetchGenres,
+      location
+    } = this.props;
     window.scroll(0, 0);
-    let id = this.props.location.state.data.id;
-    this.props.fetchSingleMedia("movie", id);
-    this.props.fetchGenres();
-    this.props.fetchMovieDetails(id, "credits");
-    this.props.fetchMovieDetails(id, "similar");
-    this.props.fetchMovieDetails(id, "reviews");
-    this.props.fetchMovieDetails(id, "videos");
+    let id = location.state.data.id;
+    fetchSingleMedia("movie", id);
+    fetchGenres();
+    fetchMovieDetails(id, "credits");
+    fetchMovieDetails(id, "similar");
+    fetchMovieDetails(id, "reviews");
+    fetchMovieDetails(id, "videos");
   }
 
   componentDidUpdate(prevProps) {
     window.scroll(0, 0);
-    let id = this.props.location.state.data.id;
-    if (
-      prevProps.location.state.data.id !== this.props.location.state.data.id
-    ) {
-      this.props.fetchSingleMedia("movie", id);
-      this.props.fetchMovieDetails(id, "credits");
-      this.props.fetchMovieDetails(id, "similar");
-      this.props.fetchMovieDetails(id, "reviews");
-      this.props.fetchMovieDetails(id, "videos");
+    const { fetchSingleMedia, fetchMovieDetails, location } = this.props;
+    let id = location.state.data.id;
+    if (prevProps.location.state.data.id !== location.state.data.id) {
+      fetchSingleMedia("movie", id);
+      fetchMovieDetails(id, "credits");
+      fetchMovieDetails(id, "similar");
+      fetchMovieDetails(id, "reviews");
+      fetchMovieDetails(id, "videos");
     }
   }
 
@@ -43,7 +48,7 @@ class MediaDetail extends MediaExtend {
     this.props.cleanDetails();
   }
 
-  getContent({ content, author }) {
+  getContent({ content }) {
     const LIMIT = 200;
     let str;
     if (content.length > LIMIT) {

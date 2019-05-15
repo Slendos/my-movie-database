@@ -1,24 +1,22 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 
 import Media from "./components/Media/Media";
 import NavBar from "./components/NavBar.jsx/NavBar";
 import Footer from "./components/Footer/Footer";
 
 import { Route, Redirect, Switch } from "react-router-dom";
-import "./App.css";
-import store from "./store";
-import SlideShow from "./components/SlideShow/SlideShow";
 import Discover from "./pages/Discover/Discover";
 import MediaDetail from "./pages/MediaDetail/MediaDetail";
 import NotFound from "./pages/NotFound/NotFound";
 import TvDetail from "./pages/TvDetail/TvDetail";
-// import { BrowserRouter } from "react-router-dom/cjs/react-router-dom";
 
-import { HashRouter } from "react-router-dom/cjs/react-router-dom";
 import PeopleDetail from "./pages/PeopleDetail/PeopleDetail";
 import SeasonDetail from "./pages/SeasonDetail/SeasonDetail";
-import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
+
+import store from "./store";
+import "./App.css";
 function App() {
   return (
     // <BrowserRouter>
@@ -28,17 +26,7 @@ function App() {
           <div>
             <NavBar />
             <Switch>
-              <Route
-                path="/"
-                exact
-                component={() => (
-                  // <div style={{ paddingTop: "5vh", marginBottom: "0px" }}>
-                  <Fragment>
-                    <Media />
-                  </Fragment>
-                  // </div>
-                )}
-              />
+              <Route path="/" exact component={() => <Media />} />
               <Route path="/movie/:id" component={MediaDetail} />
               <Route path="/tv/:id" exact component={TvDetail} />
               <Route

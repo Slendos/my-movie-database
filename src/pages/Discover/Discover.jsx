@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { API_KEY } from "../../actions/types";
-import "./discover.css";
-import GenreItem from "../../components/GenreItem/GenreItem";
-import { Link } from "react-router-dom/cjs/react-router-dom";
 import DiscoverField from "../../components/DiscoverField/DiscoverField";
 
-const imgUrl = "https://image.tmdb.org/t/p/w500";
+import "./discover.css";
+// const imgUrl = "https://image.tmdb.org/t/p/w500";
 
 class Discover extends Component {
   state = {
@@ -32,7 +30,7 @@ class Discover extends Component {
 
   handleSubmit = (e, page = 1) => {
     e.preventDefault();
-    const { text, activeGenre } = this.state;
+    const { text } = this.state;
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=${page}&include_adult=false&query=${text}`;
 
     fetch(url)
@@ -44,7 +42,7 @@ class Discover extends Component {
     this.setState({ activeGenre: genre });
   };
 
-  handlePaginate = (page, pageSize) => {
+  handlePaginate = page => {
     window.scroll(0, 0);
     const { text } = this.state;
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=${page}&include_adult=false&query=${text}`;
@@ -55,7 +53,7 @@ class Discover extends Component {
   };
 
   render() {
-    const { genres, search, activeGenre } = this.state;
+    const { search } = this.state;
     return (
       <div style={{ paddingTop: "6vh" }}>
         <div>Discover</div>

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const Placeholder = props => {
   return <div style={{ width: "100px", height: "300px" }}>sadsada</div>;

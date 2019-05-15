@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
 const Review = ({ review }) => {
-  const getContent = ({ content, author }) => {
+  const getContent = ({ content }) => {
     const LIMIT = 200;
     let str;
     if (content.length > LIMIT) {

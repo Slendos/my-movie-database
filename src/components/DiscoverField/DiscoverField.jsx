@@ -28,16 +28,7 @@ class DiscoverField extends Component {
             <button className="discover-btn" type="submit" />
           </form>
         </div>
-        <div
-          style={{
-            minHeight: "100vh",
-            width: "80%",
-            margin: "0 auto",
-            display: "flex",
-            flexWrap: "wrap",
-            marginTop: "20px"
-          }}
-        >
+        <div className="discover-cards-wrapper">
           {search.results &&
             search.results.map(movie => (
               <div style={{ flex: "1 0 20%", marginBottom: "4vh" }}>

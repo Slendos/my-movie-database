@@ -2,3 +2,12 @@
   margin-bottom: 5vh;
   margin-top: 5vh;
 }
+
+.discover-cards-wrapper {
+  min-height: 100vh;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}

@@ -6,17 +6,17 @@ const initialState = {};
 
 const middleware = [thunk];
 
-const loadState = () => {
-  try {
-    const serializedState = localStorage.getItem("state");
-    if (serializedState === null) {
-      return undefined;
-    }
-    return JSON.parse(serializedState);
-  } catch (e) {
-    return undefined;
-  }
-};
+// const loadState = () => {
+//   try {
+//     const serializedState = localStorage.getItem("state");
+//     if (serializedState === null) {
+//       return undefined;
+//     }
+//     return JSON.parse(serializedState);
+//   } catch (e) {
+//     return undefined;
+//   }
+// };
 
 const saveState = state => {
   try {
@@ -27,7 +27,7 @@ const saveState = state => {
   }
 };
 
-const persistedState = loadState();
+// const persistedState = loadState();
 
 const store = createStore(
   // Other reducer

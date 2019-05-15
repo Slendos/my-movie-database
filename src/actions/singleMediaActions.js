@@ -3,7 +3,6 @@ import {
   FETCH_SINGLE_MEDIA,
   FETCH_TV_CREDITS,
   CLEAN_TV_DETAILS,
-  FETCH_TV_EPISODES,
   FETCH_MOVIE_CREDITS,
   CLEAN_DETAILS
 } from "./types";
@@ -44,24 +43,6 @@ export const fetchMovieDetails = (id, type) => dispatch => {
       })
     );
 };
-
-// export const fetchTvEpisodes = id => dispatch => {
-//   console.log("fetching tv", id);
-//   fetch(
-//     `https://api.themoviedb.org/3/tv/episode_group/${id}?api_key=${API_KEY}&language=en-US`
-//   )
-//     .then(res => res.json())
-//     .then(data => dispatch({ type: FETCH_TV_EPISODES, payload: data }));
-// };
-
-// export const fetchTvSeasons = id => dispatch => {
-//   console.log("fetching tv", id);
-//   fetch(
-//     `https://api.themoviedb.org/3/tv/seasons/${id}?api_key=${API_KEY}&language=en-US`
-//   )
-//     .then(res => res.json())
-//     .then(data => dispatch({ type: FETCH_TV_EPISODES, payload: data }));
-// };
 
 export const cleanDetails = () => dispatch => {
   dispatch({ type: CLEAN_DETAILS });

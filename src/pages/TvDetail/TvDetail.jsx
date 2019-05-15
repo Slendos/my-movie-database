@@ -5,44 +5,40 @@ import {
   fetchTvDetails,
   cleanTvDetails,
   cleanDetails
-  // fetchTvEpisodes,
-  // fetchTvSeasons
 } from "../../actions/singleMediaActions";
 
-import "./tvDetail.css";
 import { fetchGenres } from "../../actions/genresActions";
 import SwiperContainer from "../../components/SwiperContainer/SwiperContainer";
-import MySwiper from "../../components/MySwiper/MySwiper";
 import MediaExtend from "../../components/MediaExtend/MediaExtend";
 
+import "./tvDetail.css";
 class TvDetail extends MediaExtend {
   componentDidMount() {
-    const { detail } = this.props;
-    const numberOfSeasons = detail.number_of_seasons;
     window.scroll(0, 0);
+    const { fetchSingleMedia, fetchTvDetails, fetchGenres } = this.props;
+
     let id = this.props.location.state.data.id;
-    this.props.fetchSingleMedia("tv", id);
-    this.props.fetchGenres();
-    this.props.fetchTvDetails(id, "credits");
-    this.props.fetchTvDetails(id, "videos");
-    this.props.fetchTvDetails(id, "similar");
-    this.props.fetchTvDetails(id, "reviews");
-    this.props.fetchTvDetails(id, "recommendations");
+    fetchSingleMedia("tv", id);
+    fetchGenres();
+    fetchTvDetails(id, "credits");
+    fetchTvDetails(id, "videos");
+    fetchTvDetails(id, "similar");
+    fetchTvDetails(id, "reviews");
+    fetchTvDetails(id, "recommendations");
     // this.props.fetchTvEpisodes(id);
   }
 
   componentDidUpdate(prevProps) {
+    const { fetchSingleMedia, fetchTvDetails, location } = this.props;
     window.scroll(0, 0);
     let id = this.props.location.state.data.id;
-    if (
-      prevProps.location.state.data.id !== this.props.location.state.data.id
-    ) {
-      this.props.fetchSingleMedia("tv", id);
-      this.props.fetchTvDetails(id, "credits");
-      this.props.fetchTvDetails(id, "videos");
-      this.props.fetchTvDetails(id, "similar");
-      this.props.fetchTvDetails(id, "reviews");
-      this.props.fetchTvDetails(id, "recommendations");
+    if (prevProps.location.state.data.id !== location.state.data.id) {
+      fetchSingleMedia("tv", id);
+      fetchTvDetails(id, "credits");
+      fetchTvDetails(id, "videos");
+      fetchTvDetails(id, "similar");
+      fetchTvDetails(id, "reviews");
+      fetchTvDetails(id, "recommendations");
       // this.props.fetchTvEpisodes(id);
     }
   }
@@ -55,7 +51,7 @@ class TvDetail extends MediaExtend {
     const { data } = this.props.location.state;
     const { genres, tvDetail, detail } = this.props;
     const { seasons } = detail;
-    const numberOfSeasons = detail.number_of_seasons;
+
     return (
       <div style={{ paddingTop: "5vh" }}>
         {this.renderBackground(data, genres, "tv")}

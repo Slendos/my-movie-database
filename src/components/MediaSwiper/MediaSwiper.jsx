@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import SwiperContainer from "../SwiperContainer/SwiperContainer";
 import "./mediaSwiper.css";
 const MediaSwiper = ({

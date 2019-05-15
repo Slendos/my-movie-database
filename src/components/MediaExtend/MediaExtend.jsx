@@ -22,7 +22,7 @@ class MediaExtend extends Component {
           </span>
         );
       });
-    else if (type == "tv") {
+    else if (type === "tv") {
       return ids.map((id, index) => {
         if (finished) return;
         if (index >= 1) {
@@ -57,10 +57,6 @@ class MediaExtend extends Component {
               style={{
                 background: `linear-gradient(0deg, rgb(0, 0, 0) 2%, rgba(0, 0, 0, 0.45) 92%) center center no-repeat, url(${imgUrl +
                   data.backdrop_path}) center top no-repeat rgb(255, 255, 255)`,
-                backgroundSize: "cover",
-                height: "100vh",
-                width: "100%",
-                position: "relative",
                 display: this.state.loading && "none"
               }}
               onLoad={() => this.setState({ loading: false })}

@@ -1,18 +1,15 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
-import "./lazyimage.css";
-import image from "../../images/blank_profile.png";
-import { Link } from "react-router-dom";
-import genresReducer from "../../reducers/genresReducer";
 import Rating from "../Rating/Rating";
 import MediaTitle from "../MediaTitle/MediaTitle";
 import MediaAirDate from "../MediaAirDate/MediaAirDate";
 import MediaCharacter from "../MediaCharacter/MediaCharacter";
 
-const LazyImage = ({ url, imgClass, data, genres, imgPath, type }) => {
+import image from "../../images/blank_profile.png";
+import "./lazyimage.css";
+const LazyImage = ({ url, imgClass, data, genres, type }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  // if (error) return <div>Error</div>;
 
   const getGenres = (ids, genres) => {
     let finished = false;

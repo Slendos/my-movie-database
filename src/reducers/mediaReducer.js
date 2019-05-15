@@ -1,10 +1,4 @@
-import {
-  FETCH_MEDIA,
-  FETCH_SINGLE_MEDIA,
-  FETCH_PERSON,
-  FETCH_MOVIE,
-  FETCH_TV
-} from "../actions/types";
+import { FETCH_MEDIA } from "../actions/types";
 
 const initialState = {
   detail: [],

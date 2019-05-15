@@ -1,9 +1,8 @@
-import React, { Component, Fragment } from "react";
+import React from "react";
 import MySwiper from "../MySwiper/MySwiper";
-import { Transition } from "react-spring/renderprops";
-import LazyLoad from "react-lazyload";
+
 import "./swiperContainer.css";
-import { lazyload } from "react-lazyload";
+
 const SwiperContainer = ({ movie, genres, title, imgPath, type, movieId }) => {
   return (
     <div className="swiper">

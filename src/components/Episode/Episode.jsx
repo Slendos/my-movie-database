@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Fade from "react-reveal/Fade";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import PerfectScrollbar from "react-perfect-scrollbar";
@@ -8,15 +8,7 @@ const imgUrl = "https://image.tmdb.org/t/p/w500";
 const Episode = ({ data }) => {
   return (
     <Fade up>
-      <div
-        style={{
-          // flex: "1 0 35%",
-          // minHeight: "100%",
-          margin: "2vh 3vh",
-          border: "2px solid black",
-          backgroundColor: "#20212b"
-        }}
-      >
+      <div className="episode-wrapper-main">
         <PerfectScrollbar>
           <div className="episode-wrapper">
             {/* <div>{console.log(data)}</div> */}
