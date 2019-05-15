@@ -16,3 +16,11 @@ footer {
   margin-top: 2vh;
   width: 15vh;
 }
+
+.credits {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-top: 2vh;
+  margin-left: 2vh;
+  font-style: italic;
+}

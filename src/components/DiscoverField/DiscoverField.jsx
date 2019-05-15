@@ -25,7 +25,10 @@ class DiscoverField extends Component {
               value={text}
             />
 
-            <button className="discover-btn" type="submit" />
+            <button className="discover-btn" type="submit">
+              {" "}
+              <i className="fas fa-search" style={{ color: "black" }} />
+            </button>
           </form>
         </div>
         <div className="discover-cards-wrapper">

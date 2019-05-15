@@ -49,32 +49,22 @@ class PeopleDetail extends MediaExtend {
           className="people-wrapper"
           style={{ textAlign: "left", minHeight: "100%" }}
         >
-          <Fade left>
-            <div className="people-image-wrapper">
-              <LazyLoad
-                height={300}
-                placeholder={<Placeholder />}
-                debounce={500}
-              >
-                <img
-                  src={imgUrl + data.profile_path}
-                  alt=""
-                  className="people-preview"
-                />
-              </LazyLoad>
+          <div className="people-image-wrapper">
+            <LazyLoad height={300} placeholder={<Placeholder />} debounce={500}>
+              <img
+                src={imgUrl + data.profile_path}
+                alt=""
+                className="people-preview"
+              />
+            </LazyLoad>
+          </div>
+          <div className="people-block">
+            <span className="people-name">{data.name}</span> <br />
+            <span className="people-age">{data.birthday}</span>
+            <div style={{ marginTop: "2vh", height: "21vh", overflow: "auto" }}>
+              {data.biography}
             </div>
-          </Fade>
-          <Fade right>
-            <div className="people-block">
-              <span className="people-name">{data.name}</span> <br />
-              <span className="people-age">{data.birthday}</span>
-              <div
-                style={{ marginTop: "2vh", height: "21vh", overflow: "auto" }}
-              >
-                {data.biography}
-              </div>
-            </div>
-          </Fade>
+          </div>
         </div>
         <SwiperContainer
           movie={personDetails.movie_credits.cast}

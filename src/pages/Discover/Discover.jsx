@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { API_KEY } from "../../actions/types";
 import DiscoverField from "../../components/DiscoverField/DiscoverField";
-
+import NavBar from "../../components/NavBar.jsx/NavBar";
 import "./discover.css";
 // const imgUrl = "https://image.tmdb.org/t/p/w500";
 
@@ -55,17 +55,20 @@ class Discover extends Component {
   render() {
     const { search } = this.state;
     return (
-      <div style={{ paddingTop: "6vh" }}>
-        <div>Discover</div>
+      <Fragment>
+        <NavBar visible={false} />
+        <div style={{ paddingTop: "6vh" }}>
+          <div className="discover-title">Search Movies</div>
 
-        <DiscoverField
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-          handlePaginate={this.handlePaginate}
-          text={this.state.text}
-          search={search}
-        />
-      </div>
+          <DiscoverField
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            handlePaginate={this.handlePaginate}
+            text={this.state.text}
+            search={search}
+          />
+        </div>
+      </Fragment>
     );
   }
 }

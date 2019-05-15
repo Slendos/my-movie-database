@@ -1,30 +1,28 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
+import { Route, Redirect, Switch } from "react-router-dom";
 
-import Media from "./components/Media/Media";
 import NavBar from "./components/NavBar.jsx/NavBar";
 import Footer from "./components/Footer/Footer";
 
-import { Route, Redirect, Switch } from "react-router-dom";
+import Media from "./pages/Media/Media";
 import Discover from "./pages/Discover/Discover";
 import MediaDetail from "./pages/MediaDetail/MediaDetail";
 import NotFound from "./pages/NotFound/NotFound";
 import TvDetail from "./pages/TvDetail/TvDetail";
-
 import PeopleDetail from "./pages/PeopleDetail/PeopleDetail";
 import SeasonDetail from "./pages/SeasonDetail/SeasonDetail";
-
+import ComponentToHide from "./components/ComponentToHide/ComponentToHide";
 import store from "./store";
 import "./App.css";
 function App() {
   return (
-    // <BrowserRouter>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className="App" id="dimScreen">
         <Provider store={store}>
           <div>
-            <NavBar />
+            <ComponentToHide />
             <Switch>
               <Route path="/" exact component={() => <Media />} />
               <Route path="/movie/:id" component={MediaDetail} />
@@ -44,7 +42,6 @@ function App() {
         </Provider>
       </div>
     </BrowserRouter>
-    // </BrowserRouter>
   );
 }
 

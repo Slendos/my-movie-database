@@ -29,13 +29,16 @@ class TvDetail extends MediaExtend {
   }
 
   componentDidUpdate(prevProps) {
-    const { fetchSingleMedia, fetchTvDetails, location } = this.props;
-    window.scroll(0, 0);
     let id = this.props.location.state.data.id;
-    if (prevProps.location.state.data.id !== location.state.data.id) {
+
+    if (
+      prevProps.location.state.data.id !== this.props.location.state.data.id
+    ) {
+      const { fetchSingleMedia, fetchTvDetails, location } = this.props;
+      window.scroll(0, 0);
       fetchSingleMedia("tv", id);
-      fetchTvDetails(id, "credits");
       fetchTvDetails(id, "videos");
+      fetchTvDetails(id, "credits");
       fetchTvDetails(id, "similar");
       fetchTvDetails(id, "reviews");
       fetchTvDetails(id, "recommendations");
@@ -55,18 +58,13 @@ class TvDetail extends MediaExtend {
     return (
       <div style={{ paddingTop: "5vh" }}>
         {this.renderBackground(data, genres, "tv")}
-        <div
-          style={{
-            display: "flex",
-            width: "80%",
-            margin: "0 auto",
-            marginTop: "5vh"
-          }}
-        >
+        <div className="tv-overview-wrapper">
           <div style={{ flex: 1 }}>{this.renderOverview(data.overview)}</div>
-          <div style={{ paddingTop: "5vh", flex: 1 }}>
-            {this.renderVideo(tvDetail.videos)}
-          </div>
+          {tvDetail.videos.results && (
+            <div style={{ paddingTop: "5vh", flex: 1 }}>
+              {this.renderVideo(tvDetail.videos)}
+            </div>
+          )}
         </div>
         <div style={{ textAlign: "left", width: "80%", margin: "0 auto" }} />
         <SwiperContainer

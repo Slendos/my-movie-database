@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
-import SlideShow from "../SlideShow/SlideShow";
 import { connect } from "react-redux";
+import Fade from "react-reveal/Fade";
 import {
   fetchMedia,
   fetchMovie,
@@ -8,10 +8,16 @@ import {
   fetchPerson
 } from "../../actions/mediaActions";
 import { fetchGenres } from "../../actions/genresActions";
+
+import SlideShow from "../../components/SlideShow/SlideShow";
+import MediaSwiper from "../../components/MediaSwiper/MediaSwiper";
+import MediaNavigation from "../../components/MediaNavigation/MediaNavigation";
+
 import "./media.css";
-import MediaSwiper from "../MediaSwiper/MediaSwiper";
-import Fade from "react-reveal/Fade";
-import MediaNavigation from "../MediaNavigation/MediaNavigation";
+
+// MOVIE TYPES: top_rated, popular, upcoming, now_playing, latest
+// TV TYPES: airing_today, on_the_air, popular, top_rated
+// PERSON TYPES: latest, popular
 class Media extends Component {
   state = {
     time: "week",
@@ -19,9 +25,6 @@ class Media extends Component {
   };
 
   componentDidMount() {
-    // MOVIE TYPES: top_rated, popular, upcoming, now_playing, latest
-    // TV TYPES: airing_today, on_the_air, popular, top_rated
-    // PERSON TYPES: latest, popular
     const movieTypes = ["top_rated", "popular", "upcoming", "now_playing"];
     const tvTypes = ["airing_today", "on_the_air", "popular", "top_rated"];
     const peopleTypes = ["popular"];

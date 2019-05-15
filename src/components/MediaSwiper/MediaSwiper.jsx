@@ -21,6 +21,7 @@ const MediaSwiper = ({
             title={title}
             imgPath={imgPath}
             type={type}
+            key={index}
           />
         ))}
       </div>

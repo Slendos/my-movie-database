@@ -11,3 +11,10 @@
   font-size: 1.7vh;
   text-align: left;
 }
+
+.tv-overview-wrapper {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5vh;
+}

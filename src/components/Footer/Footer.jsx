@@ -7,8 +7,14 @@ const Footer = () => {
     <footer>
       <div className="footer-div">
         {" "}
-        <div>
-          <img src={movieDb} alt="" className="footer-logo" />
+        <a href="https://www.themoviedb.org/">
+          <div style={{ display: "inline-block" }}>
+            <img src={movieDb} alt="" className="footer-logo" />
+          </div>
+        </a>
+        <div className="credits">
+          This product uses the TMDb API but is not endorsed or certified by
+          TMDb.
         </div>
       </div>
     </footer>
