@@ -4,6 +4,7 @@ import Rating from "../Rating/Rating";
 import MediaTitle from "../MediaTitle/MediaTitle";
 import MediaAirDate from "../MediaAirDate/MediaAirDate";
 import MediaCharacter from "../MediaCharacter/MediaCharacter";
+// import { getGenres } from "../../utils/getGenres";
 
 import image from "../../images/blank_profile.png";
 import "./lazyimage.css";

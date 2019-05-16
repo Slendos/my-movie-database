@@ -31,9 +31,7 @@ export const fetchTvDetails = (id, type) => dispatch => {
 };
 
 export const fetchMovieDetails = (id, type) => dispatch => {
-  fetch(
-    `https://api.themoviedb.org/3/movie/${id}/${type}?api_key=${API_KEY}&language=en-US`
-  )
+  fetch(`https://api.themoviedb.org/3/movie/${id}/${type}?api_key=${API_KEY}`)
     .then(res => res.json())
     .then(data =>
       dispatch({

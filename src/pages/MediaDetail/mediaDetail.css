@@ -46,3 +46,10 @@ article {
 .review-wrapper:nth-child(even) {
   border-left: 4px solid grey;
 }
+
+.gallery-wrapper {
+  height: 50%;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 3vh;
+}

@@ -22,7 +22,8 @@ const initialState = {
     credits: [],
     similar: [],
     reviews: [],
-    videos: []
+    videos: [],
+    images: []
   },
 
   personDetails: {
@@ -90,30 +91,8 @@ export default (state = initialState, action) => {
 
     case CLEAN_TV_DETAILS:
       return {
-        ...state,
-        detail: [],
-        tv: {
-          credits: [],
-          videos: [],
-          similar: [],
-          reviews: [],
-          recommendations: [],
-          episode_groups: []
-        },
-
-        movie: {
-          credits: [],
-          similar: [],
-          reviews: [],
-          videos: []
-        },
-
-        personDetails: {
-          tv_credits: [],
-          movie_credits: []
-        }
+        initialState
       };
-
     // case NEW_POST:
     //   return {
     //     ...state,

@@ -8,6 +8,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-id-swiper": "^2.1.2",
+    "react-image-gallery": "^0.8.16",
     "react-lazyload": "^2.5.0",
     "react-perfect-scrollbar": "^1.5.2",
     "react-redux": "^7.0.3",

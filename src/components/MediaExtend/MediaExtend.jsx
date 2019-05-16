@@ -105,7 +105,7 @@ class MediaExtend extends Component {
 
   renderVideo(video) {
     return (
-      <div key={video.results[0].id}>
+      <div key={video.results[0] && video.results[0].id}>
         {video.results && video.results[0] && (
           <div style={{ height: "40vh" }}>
             <iframe

@@ -10,8 +10,11 @@ import { connect } from "react-redux";
 import "./mediaDetail.css";
 import SwiperContainer from "../../components/SwiperContainer/SwiperContainer";
 import Review from "../../components/Review/Review";
+import ImageGallery from "react-image-gallery";
 
-// const imgUrl = "https://image.tmdb.org/t/p/original";
+import "react-image-gallery/styles/css/image-gallery.css";
+
+const imgUrl = "https://image.tmdb.org/t/p/original";
 // const smallUrl = "https://image.tmdb.org/t/p/w200";
 class MediaDetail extends MediaExtend {
   componentDidMount() {
@@ -29,6 +32,7 @@ class MediaDetail extends MediaExtend {
     fetchMovieDetails(id, "similar");
     fetchMovieDetails(id, "reviews");
     fetchMovieDetails(id, "videos");
+    fetchMovieDetails(id, "images");
   }
 
   componentDidUpdate(prevProps) {
@@ -41,6 +45,7 @@ class MediaDetail extends MediaExtend {
       fetchMovieDetails(id, "similar");
       fetchMovieDetails(id, "reviews");
       fetchMovieDetails(id, "videos");
+      fetchMovieDetails(id, "images");
     }
   }
 
@@ -48,21 +53,17 @@ class MediaDetail extends MediaExtend {
     this.props.cleanDetails();
   }
 
-  getContent({ content }) {
-    const LIMIT = 200;
-    let str;
-    if (content.length > LIMIT) {
-      str = content.substring(0, LIMIT) + "...";
-    } else {
-      return content;
-    }
-    return str;
-  }
-
   render() {
     const data = this.props.detail;
     const { genres, movie } = this.props;
     console.log("DATA", data, movie);
+    let images = movie.images.backdrops && movie.images.backdrops.slice(0, 20);
+    let gallery =
+      images &&
+      images.map(img => ({
+        original: imgUrl + img.file_path
+      }));
+    console.log("img", gallery);
     return (
       <main>
         <div style={{ width: "100%", height: "100vh" }}>
@@ -80,6 +81,17 @@ class MediaDetail extends MediaExtend {
             </div>
           )}
         </article>
+        {gallery && (
+          <div className="gallery-wrapper">
+            <ImageGallery
+              items={gallery}
+              showThumbnails={false}
+              autoPlay={true}
+              slideInterval={6000}
+              lazyLoad={true}
+            />
+          </div>
+        )}
         {movie.reviews.results && movie.reviews.results.length !== 0 ? (
           <article style={{ textAlign: "left" }}>
             <span className="swiper-title">Reviews</span>

@@ -1,4 +1,4 @@
-export const getGenres = (ids, genres) => {
+export function getGenres(ids, genres) {
   let finished = false;
   return ids.map((id, index) => {
     if (finished) return;
@@ -13,4 +13,4 @@ export const getGenres = (ids, genres) => {
       </span>
     );
   });
-};
+}

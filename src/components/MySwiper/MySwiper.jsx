@@ -11,44 +11,41 @@ const MySwiper = ({ movies, genres, imgPath, type, slides = 8, movieId }) => {
     else return 8;
   };
 
+  const myBreakPoints = {
+    320: {
+      slidesPerView: 1
+    },
+    500: {
+      slidesPerView: 2
+    },
+    700: {
+      slidesPerView: 3
+    },
+    900: {
+      slidesPerView: 4
+    },
+    1100: {
+      slidesPerView: 5
+    },
+    1500: {
+      slidesPerView: 6
+    },
+    1700: {
+      slidesPerView: 7
+    }
+  };
   const params = {
     slidesPerView: getNumberOfSlides(movies),
     shouldSwiperUpdate: true,
     rebuildOnUpdate: true,
     observer: true,
-    breakpoints: {
-      // when window width is <= 320px
-
-      320: {
-        slidesPerView: 1
-      },
-      // when window width is <= 480px
-      500: {
-        slidesPerView: 2
-      },
-      // when window width is <= 640px
-      700: {
-        slidesPerView: 3
-      },
-      900: {
-        slidesPerView: 4
-      },
-      1100: {
-        slidesPerView: 5
-      },
-      1500: {
-        slidesPerView: 6
-      },
-      1700: {
-        slidesPerView: 7
-      }
-    },
+    breakpoints: myBreakPoints,
     modules: [Navigation],
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"
     },
-    spaceBetween: 0
+    spaceBetween: 20
   };
   return (
     <Swiper {...params}>

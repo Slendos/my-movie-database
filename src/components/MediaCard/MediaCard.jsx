@@ -13,6 +13,17 @@ const MediaCard = ({ movie, genres, imgPath, type, movieId }) => {
       return imgUrlW500;
     }
   };
+
+  let myLazyImage = (
+    <LazyImage
+      url={getUrl(type) + movie[imgPath]}
+      data={movie}
+      imgClass="movie-preview"
+      genres={genres}
+      imgPath={imgPath}
+      type={type}
+    />
+  );
   return (
     <Fragment>
       <LazyLoad height={150}>
@@ -25,14 +36,7 @@ const MediaCard = ({ movie, genres, imgPath, type, movieId }) => {
             style={{ textDecoration: "none", color: "white" }}
             key={movie.id}
           >
-            <LazyImage
-              url={getUrl(type) + movie[imgPath]}
-              data={movie}
-              imgClass="movie-preview"
-              genres={genres}
-              imgPath={imgPath}
-              type={type}
-            />
+            {myLazyImage}
           </Link>
         ) : (
           <Link
@@ -40,14 +44,7 @@ const MediaCard = ({ movie, genres, imgPath, type, movieId }) => {
             style={{ textDecoration: "none", color: "white" }}
             key={movie.id}
           >
-            <LazyImage
-              url={getUrl(type) + movie[imgPath]}
-              data={movie}
-              imgClass="movie-preview"
-              genres={genres}
-              imgPath={imgPath}
-              type={type}
-            />
+            {myLazyImage}
           </Link>
         )}
       </LazyLoad>
