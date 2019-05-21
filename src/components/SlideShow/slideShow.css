@@ -130,7 +130,7 @@
 .slideshow-background {
   position: absolute;
   background-size: cover !important;
-  background-attachment: fixed !important;
+  /* background-attachment: fixed !important; */
   height: 100vh;
   width: 100%;
   z-index: 1;

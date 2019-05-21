@@ -2,7 +2,7 @@
   "name": "movie-database",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Slendos/my-movie-database/",
+  "homepage": "https://slendos.github.io/my-movie-database/",
   "dependencies": {
     "antd": "^3.17.0",
     "gh-pages": "^2.0.1",

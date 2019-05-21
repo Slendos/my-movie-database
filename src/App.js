@@ -1,6 +1,9 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
+import {
+  BrowserRouter,
+  HashRouter
+} from "react-router-dom/cjs/react-router-dom.min";
 import { Route, Redirect, Switch } from "react-router-dom";
 
 import NavBar from "./components/NavBar.jsx/NavBar";
@@ -16,6 +19,7 @@ import SeasonDetail from "./pages/SeasonDetail/SeasonDetail";
 import ComponentToHide from "./components/ComponentToHide/ComponentToHide";
 import store from "./store";
 import "./App.css";
+// basename={process.env.PUBLIC_URL}
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
