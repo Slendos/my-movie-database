@@ -6,7 +6,8 @@
 
 ## Introduction
 
-I built movie database using [TMDb](https://www.themoviedb.org/) API
+I built movie database using [TMDb](https://www.themoviedb.org/) API<br/>
+You can browse through movies, tv seasons, tv episodes, people
 
 #### Link
 
