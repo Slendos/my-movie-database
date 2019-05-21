@@ -15,7 +15,7 @@ You can:
 
 #### Link
 
-- (https://my-react-moviedb.herokuapp.com/)
+- (https://my-react-moviedb.herokuapp.com/) <i>!app sometimes needs throw error after load but runs fine after reload!</i>
 
 ## Build with
 
