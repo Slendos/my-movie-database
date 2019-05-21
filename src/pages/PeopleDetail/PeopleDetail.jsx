@@ -59,7 +59,8 @@ class PeopleDetail extends MediaExtend {
           <div className="people-block">
             <span className="people-name">{data.name}</span> <br />
             <span className="people-age">*{data.birthday}</span>
-            <div style={{ marginTop: "2vh", height: "18vh", overflow: "auto" }}>
+            <div className="biography-about">About</div>
+            <div className="people-biography">
               {data.biography || "there is no biography"}
             </div>
           </div>

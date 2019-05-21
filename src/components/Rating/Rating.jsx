@@ -13,7 +13,7 @@ const Rating = ({ rating }) => {
       {/* <br /> */}
     </Fragment>
   ) : (
-    <span>No rating</span>
+    ""
   );
 };
 
