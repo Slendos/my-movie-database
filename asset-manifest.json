@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Slendos/my-movie-database/static/css/main.a1004b1b.chunk.css",
+    "main.js": "/Slendos/my-movie-database/static/js/main.290f0f8d.chunk.js",
+    "main.js.map": "/Slendos/my-movie-database/static/js/main.290f0f8d.chunk.js.map",
+    "runtime~main.js": "/Slendos/my-movie-database/static/js/runtime~main.0a9b5710.js",
+    "runtime~main.js.map": "/Slendos/my-movie-database/static/js/runtime~main.0a9b5710.js.map",
+    "static/css/2.3b138234.chunk.css": "/Slendos/my-movie-database/static/css/2.3b138234.chunk.css",
+    "static/js/2.39fc2051.chunk.js": "/Slendos/my-movie-database/static/js/2.39fc2051.chunk.js",
+    "static/js/2.39fc2051.chunk.js.map": "/Slendos/my-movie-database/static/js/2.39fc2051.chunk.js.map",
+    "index.html": "/Slendos/my-movie-database/index.html",
+    "precache-manifest.5bc06ec166c467099fe2ce1409fabc1c.js": "/Slendos/my-movie-database/precache-manifest.5bc06ec166c467099fe2ce1409fabc1c.js",
+    "service-worker.js": "/Slendos/my-movie-database/service-worker.js",
+    "static/css/2.3b138234.chunk.css.map": "/Slendos/my-movie-database/static/css/2.3b138234.chunk.css.map",
+    "static/css/main.a1004b1b.chunk.css.map": "/Slendos/my-movie-database/static/css/main.a1004b1b.chunk.css.map",
+    "static/media/filmIcon.png": "/Slendos/my-movie-database/static/media/filmIcon.dc170dd5.png"
+  }
+}
