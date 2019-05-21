@@ -1,7 +1,8 @@
 import React from "react";
 
 const Rating = ({ rating }) => {
-  return (
+  console.log(rating);
+  return rating > 0 ? (
     <span style={{ fontWeight: "bold" }}>
       {" "}
       <span style={{ fontSize: "1.5vh" }}>
@@ -10,6 +11,8 @@ const Rating = ({ rating }) => {
       </span>
       <br />
     </span>
+  ) : (
+    <span>No rating</span>
   );
 };
 

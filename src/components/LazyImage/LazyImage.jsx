@@ -52,7 +52,11 @@ const LazyImage = ({ url, imgClass, data, genres, type }) => {
       )}
       {!loading && <LoadingSpinner />}
       <br />
-      {loading && data.vote_average && <Rating rating={data.vote_average} />}
+      {loading && data.vote_average ? (
+        <Rating rating={data.vote_average} />
+      ) : (
+        <div style={{ marginTop: "2vh" }} />
+      )}
       {loading && <MediaTitle title={data.title || data.name} />}
       {loading && data.character && (
         <MediaCharacter character={data.character} />
