@@ -29,12 +29,10 @@ class TvDetail extends MediaExtend {
   }
 
   componentDidUpdate(prevProps) {
-    let id = this.props.location.state.data.id;
+    const { fetchSingleMedia, fetchTvDetails, location } = this.props;
+    let id = location.state.data.id;
 
-    if (
-      prevProps.location.state.data.id !== this.props.location.state.data.id
-    ) {
-      const { fetchSingleMedia, fetchTvDetails, location } = this.props;
+    if (prevProps.location.state.data.id !== location.state.data.id) {
       window.scroll(0, 0);
       fetchSingleMedia("tv", id);
       fetchTvDetails(id, "videos");
@@ -115,7 +113,5 @@ export default connect(
     fetchTvDetails,
     cleanTvDetails,
     cleanDetails
-    // fetchTvEpisodes,
-    // fetchTvSeasons
   }
 )(TvDetail);

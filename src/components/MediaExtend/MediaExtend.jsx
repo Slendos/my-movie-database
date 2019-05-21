@@ -70,7 +70,9 @@ class MediaExtend extends Component {
                   />
                 </div>
                 <div className="description-main">
-                  <span>{data.title || data.name}</span>
+                  <span className="description-title-name">
+                    {data.title || data.name}
+                  </span>
                   <div>
                     <span className="description-release">
                       <i className="fas fa-star" style={{ color: "red" }} />
@@ -78,6 +80,8 @@ class MediaExtend extends Component {
                       {(type === "tv" || data.genres) &&
                         this.getGenres(data.genre_ids, genres, data, type)}{" "}
                       <br />
+                      {data.number_of_seasons}
+                      {console.log(data, "number")}
                       {data.original_language}
                       <br />
                       {<i style={{ fontSize: "1.5vh" }}>{data.tagline}</i>}

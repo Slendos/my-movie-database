@@ -34,7 +34,7 @@ class NavBarForm extends Component {
               }}
             >
               <button type="submit" className="input-submit">
-                <i className="fas fa-search" />
+                <i className="fas fa-search" style={{ color: "black" }} />
               </button>
             </Link>
           </div>

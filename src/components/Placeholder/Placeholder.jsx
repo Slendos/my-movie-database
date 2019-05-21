@@ -1,7 +1,7 @@
 import React from "react";
 
-const Placeholder = props => {
-  return <div style={{ width: "100px", height: "300px" }}>sadsada</div>;
+const Placeholder = () => {
+  return <div />;
 };
 
 export default Placeholder;

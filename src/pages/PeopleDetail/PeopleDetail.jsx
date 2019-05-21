@@ -1,6 +1,5 @@
 import React from "react";
 import MediaExtend from "../../components/MediaExtend/MediaExtend";
-import Fade from "react-reveal/Fade";
 import LazyLoad from "react-lazyload";
 import { connect } from "react-redux";
 
@@ -10,7 +9,6 @@ import {
 } from "../../actions/singleMediaActions";
 import { fetchPersonDetails } from "../../actions/mediaActions";
 
-import Placeholder from "../../components/Placeholder/Placeholder";
 import SwiperContainer from "../../components/SwiperContainer/SwiperContainer";
 
 import "./peopleDetail.css";
@@ -50,7 +48,7 @@ class PeopleDetail extends MediaExtend {
           style={{ textAlign: "left", minHeight: "100%" }}
         >
           <div className="people-image-wrapper">
-            <LazyLoad height={300} placeholder={<Placeholder />} debounce={500}>
+            <LazyLoad height={300}>
               <img
                 src={imgUrl + data.profile_path}
                 alt=""
@@ -60,9 +58,9 @@ class PeopleDetail extends MediaExtend {
           </div>
           <div className="people-block">
             <span className="people-name">{data.name}</span> <br />
-            <span className="people-age">{data.birthday}</span>
-            <div style={{ marginTop: "2vh", height: "21vh", overflow: "auto" }}>
-              {data.biography}
+            <span className="people-age">*{data.birthday}</span>
+            <div style={{ marginTop: "2vh", height: "18vh", overflow: "auto" }}>
+              {data.biography || "there is no biography"}
             </div>
           </div>
         </div>

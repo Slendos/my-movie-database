@@ -5,6 +5,7 @@ footer {
   background-color: #0f1215;
   /* padding: 2vh 40vh; */
   color: white;
+  overflow: hidden;
 }
 
 .footer-div {
@@ -18,9 +19,15 @@ footer {
 }
 
 .credits {
-  display: inline-block;
-  vertical-align: bottom;
-  margin-top: 2vh;
-  margin-left: 2vh;
+  /* display: inline-block; */
+  /* vertical-align: bottom; */
+  /* margin-top: 2vh;
+  margin-left: 2vh; */
   font-style: italic;
+  text-align: left;
+}
+
+.inline {
+  display: inline-block;
+  margin-left: 2vh;
 }

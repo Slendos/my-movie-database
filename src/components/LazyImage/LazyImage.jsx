@@ -59,7 +59,10 @@ const LazyImage = ({ url, imgClass, data, genres, type }) => {
       )}
       {loading && data.air_date && <MediaAirDate date={data.air_date} />}
       {loading && genres && (
-        <div className="movie-genres"> {getGenres(data.genre_ids, genres)}</div>
+        <div className="movie-genres">
+          {" "}
+          <span>{getGenres(data.genre_ids, genres)}</span>
+        </div>
       )}
     </React.Fragment>
   );

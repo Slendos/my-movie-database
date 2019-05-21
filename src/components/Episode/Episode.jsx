@@ -11,7 +11,6 @@ const Episode = ({ data }) => {
       <div className="episode-wrapper-main">
         <PerfectScrollbar>
           <div className="episode-wrapper">
-            {/* <div>{console.log(data)}</div> */}
             <div className="episode-number">{data.episode_number}</div>
             <div>
               <img
@@ -21,13 +20,22 @@ const Episode = ({ data }) => {
               />
             </div>
             <div className="episode-name">{data.name}</div>
-            {data.vote_average && data.vote_average !== 0 && (
+            {data.vote_average && data.vote_average > 0 ? (
               <div className="episode-rating">
-                <i className="fas fa-star" style={{ color: "red" }} />
-                {" " + data.vote_average.toFixed(2)}
+                <i
+                  className="fas fa-star"
+                  style={{ color: "red", fontWeight: "bold" }}
+                />
+                <span style={{ fontWeight: "bold" }}>
+                  {" " + data.vote_average.toFixed(2)}
+                </span>
               </div>
+            ) : (
+              "no rating yet"
             )}
-            <div className="episode-overview">{data.overview}</div>
+            <div className="episode-overview">
+              {data.overview || "there is no overview yet"}
+            </div>
           </div>
         </PerfectScrollbar>
       </div>

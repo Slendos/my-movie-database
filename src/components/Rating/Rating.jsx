@@ -4,8 +4,10 @@ const Rating = ({ rating }) => {
   return (
     <span style={{ fontWeight: "bold" }}>
       {" "}
-      <i className="fas fa-star" style={{ color: "red" }} />
-      {" " + rating}
+      <span style={{ fontSize: "1.5vh" }}>
+        <i className="fas fa-star" style={{ color: "red" }} />
+        {" " + rating}
+      </span>
       <br />
     </span>
   );

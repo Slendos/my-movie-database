@@ -44,7 +44,11 @@
 
 .active {
   background-color: rgb(21, 21, 63);
-  border: 1px solid grey;
+  border: 2px solid grey;
+}
+
+input {
+  outline: none;
 }
 
 .navigation-div:hover {

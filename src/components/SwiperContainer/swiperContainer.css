@@ -9,3 +9,7 @@
   margin-bottom: 2vh;
   font-weight: bold;
 }
+
+.swiper-main {
+  height: 30vh !important;
+}

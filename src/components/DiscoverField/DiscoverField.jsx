@@ -27,7 +27,10 @@ class DiscoverField extends Component {
 
             <button className="discover-btn" type="submit">
               {" "}
-              <i className="fas fa-search" style={{ color: "black" }} />
+              <i
+                className="fas fa-search"
+                style={{ color: "black", fontSize: "1.5vh" }}
+              />
             </button>
           </form>
         </div>

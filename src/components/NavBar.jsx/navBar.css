@@ -3,6 +3,7 @@
   background-color: #1c262b;
   width: 100%;
   opacity: 1;
+  height: 5vh;
 }
 
 .input-text {
@@ -11,6 +12,7 @@
   border: none;
   border-radius: 2vh;
   height: 3vh;
+  width: 40vh;
   vertical-align: middle;
   text-decoration: none;
   color: black;
@@ -24,7 +26,7 @@
   vertical-align: middle;
   border-left: none;
   background: none;
-  border-radius: 20px;
+  border-radius: 2vh;
   border: 2px solid grey;
 }
 
@@ -35,7 +37,7 @@
 
 .form-search {
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 1vh;
   display: inline-block;
   position: relative;
 }
@@ -46,8 +48,10 @@
 }
 
 .input-submit {
-  background-color: orange;
+  background-color: #62d0ad;
   border: none;
+  border-radius: 50%;
+  font-size: 1.5vh;
 }
 
 .discover-link {
@@ -64,7 +68,7 @@
 }
 
 .nav-icon {
-  width: 50px;
+  width: 5vh;
   padding-top: 2px;
   cursor: pointer;
 }

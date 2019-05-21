@@ -12,9 +12,11 @@ const Footer = () => {
             <img src={movieDb} alt="" className="footer-logo" />
           </div>
         </a>
-        <div className="credits">
-          This product uses the TMDb API but is not endorsed or certified by
-          TMDb.
+        <div className="inline">
+          <div className="credits">
+            This product uses the TMDb API but is not endorsed or certified by
+            TMDb.
+          </div>
         </div>
       </div>
     </footer>

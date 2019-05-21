@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./review.css";
 const Review = ({ review }) => {
   const getContent = ({ content }) => {
     const LIMIT = 200;
@@ -13,11 +13,15 @@ const Review = ({ review }) => {
   };
   return (
     <div className="review-wrapper">
-      <div>{review.author}</div>
       <div>
-        <i> {getContent(review)}</i>
+        <span className="review-author">{review.author}</span>
       </div>
-      <a href={review.url}>Read more</a>
+      <div style={{ marginBottom: "2vh" }}>
+        <i className="review-content"> {getContent(review)}</i>
+      </div>
+      <a href={review.url} className="review-url">
+        Read more
+      </a>
     </div>
   );
 };

@@ -22,3 +22,7 @@
   height: 20vh;
   overflow: auto;
 }
+
+.description-title-name {
+  font-size: 5vh;
+}

@@ -26,32 +26,35 @@
 }
 
 .discover-form {
-  width: 240px;
+  width: 30vh;
   position: relative;
   margin: 0 auto;
+  margin-bottom: 2vh;
 }
 
 .discover-input {
-  border-radius: 20px;
+  border-radius: 2vh;
+  width: 30vh;
   border: none;
   height: 3vh;
   padding: 1vh 2vh;
-  width: 240px;
+  font-size: 2vh;
   color: black;
 }
 
 .discover-btn {
   position: absolute;
-  right: -1px;
-  top: -1px;
+  right: 0;
+  top: -0.08vh;
   height: 3.2vh;
   width: 3.1vh;
-  border-radius: 20px;
+  border-radius: 2vh;
   border: none;
-  background-color: brown;
+  background-color: #62d0ad;
 }
 
 .discover-title {
   margin-top: 2vh;
   margin-bottom: 2vh;
+  font-size: 3vh;
 }
