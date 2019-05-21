@@ -63,9 +63,7 @@ class Media extends Component {
           <div className="slideshow-wrapper-main">
             {this.props.movie["now_playing"] &&
               this.props.movie["now_playing"].results !== undefined && (
-                <Fade left>
-                  <SlideShow data={this.props.movie["now_playing"].results} />
-                </Fade>
+                <SlideShow data={this.props.movie["now_playing"].results} />
               )}
           </div>
         </div>
