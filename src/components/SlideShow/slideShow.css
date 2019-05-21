@@ -120,6 +120,11 @@
 }
 
 .description-rating {
+  /* margin-left: -1.5vh; */
+  padding: 1vh 1.5vh;
+  border-radius: 12px;
+  background: rgba(150, 141, 141, 0.1);
+  margin-bottom: 2vh;
 }
 
 .slideshow-title {
@@ -137,6 +142,8 @@
 }
 
 .slideshow-overview {
+  margin-top: 2vh;
+  padding-left: 0.7vh;
   font-size: 1.8vh;
   overflow: auto;
   height: 12vh;

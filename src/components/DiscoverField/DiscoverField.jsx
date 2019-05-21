@@ -36,11 +36,14 @@ class DiscoverField extends Component {
         <div className="discover-cards-wrapper">
           {search.results &&
             search.results.map(movie => (
-              <div
-                style={{ flex: "1 0 20%", marginBottom: "4vh" }}
-                key={movie.id}
-              >
-                <div>
+              <div className="discover-movie-item" key={movie.id}>
+                <div
+                  style={{
+                    position: "relative",
+                    width: "15vh",
+                    paddinLeft: "15vh"
+                  }}
+                >
                   <MediaCard
                     movie={movie}
                     imgPath="poster_path"

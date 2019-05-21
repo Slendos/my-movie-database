@@ -69,28 +69,28 @@ class MediaDetail extends MediaExtend {
           {this.renderBackground(data, genres, "movie")}
         </div>
         {/* <article /> */}
-        <article className="overview-main" style={{ display: "flex" }}>
-          <div style={{ flex: 1 }}>{this.renderOverview(data.overview)}</div>
-          {console.log("video", movie.videos)}
+        <article className="tv-overview-wrapper">
+          {gallery && (
+            <div className="gallery-wrapper">
+              <ImageGallery
+                items={gallery}
+                showThumbnails={false}
+                autoPlay={true}
+                slideInterval={6000}
+                lazyLoad={true}
+              />
+            </div>
+          )}
+          {/* <div style={{ flex: 1 }}>{this.renderOverview(data.overview)}</div>
+          {console.log("video", movie.videos)} */}
           {movie.videos.results && (
-            <div style={{ flex: 1 }}>
+            <div style={{ flex: 1, marginBottom: "2vh", marginLeft: "2vh" }}>
               {" "}
-              {console.log(movie.videos.results)}
               {this.renderVideo(movie.videos)}
             </div>
           )}
         </article>
-        {gallery && (
-          <div className="gallery-wrapper">
-            <ImageGallery
-              items={gallery}
-              showThumbnails={false}
-              autoPlay={true}
-              slideInterval={6000}
-              lazyLoad={true}
-            />
-          </div>
-        )}
+
         {movie.reviews.results && movie.reviews.results.length !== 0 ? (
           <article style={{ textAlign: "left" }}>
             <span className="swiper-title">Reviews</span>

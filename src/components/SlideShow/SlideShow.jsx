@@ -48,7 +48,7 @@ const SlideShow = ({ data }) => {
                   className="description-rating"
                   style={{ fontSize: "2vh" }}
                 >
-                  <i className="fas fa-star" style={{ color: "red" }} />
+                  Rating: <i className="fas fa-star" style={{ color: "red" }} />
                   {" " + data[index].vote_average}
                   <br />
                 </span>

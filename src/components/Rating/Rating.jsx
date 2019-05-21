@@ -1,15 +1,17 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 const Rating = ({ rating }) => {
   return rating > 0 ? (
-    <span style={{ fontWeight: "bold" }}>
-      {" "}
-      <span style={{ fontSize: "1.5vh" }}>
-        <i className="fas fa-star" style={{ color: "red" }} />
-        {" " + rating}
+    <Fragment>
+      <span style={{ fontWeight: "bold" }} className="myswiper-rating">
+        {" "}
+        <span style={{ fontSize: "1.5vh" }}>
+          <i className="fas fa-star" style={{ color: "red" }} />
+          {" " + rating}
+        </span>
       </span>
-      <br />
-    </span>
+      {/* <br /> */}
+    </Fragment>
   ) : (
     <span>No rating</span>
   );

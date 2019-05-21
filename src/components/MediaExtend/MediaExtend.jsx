@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import "./mediaExtend.css";
 const imgUrl = "https://image.tmdb.org/t/p/original";
 const smallUrl = "https://image.tmdb.org/t/p/w200";
 class MediaExtend extends Component {
@@ -55,13 +56,13 @@ class MediaExtend extends Component {
             <div
               className="cover"
               style={{
-                background: `linear-gradient(0deg, rgb(0, 0, 0) 2%, rgba(0, 0, 0, 0.45) 92%) center center no-repeat, url(${imgUrl +
+                background: `linear-gradient(0deg, rgb(0, 0, 0, 0.98) 30%, rgba(0, 0, 0, 0.45) 92%) center center no-repeat, url(${imgUrl +
                   data.backdrop_path}) center top no-repeat rgb(255, 255, 255)`,
                 display: this.state.loading && "none"
               }}
               onLoad={() => this.setState({ loading: false })}
             >
-              <div className="preview-title">
+              <div className="preview-title-extend">
                 <div className="preview-image">
                   <img
                     src={smallUrl + data.poster_path}
@@ -69,22 +70,29 @@ class MediaExtend extends Component {
                     className="movie-preview"
                   />
                 </div>
-                <div className="description-main">
+                <div className="description-extend-main">
                   <span className="description-title-name">
                     {data.title || data.name}
                   </span>
                   <div>
                     <span className="description-release">
-                      <i className="fas fa-star" style={{ color: "red" }} />
-                      {" " + data.vote_average} <br />
+                      <span className="description-extend-rating">
+                        Rating:{" "}
+                        <i className="fas fa-star" style={{ color: "red" }} />
+                        {" " + data.vote_average}
+                      </span>
+                      <br />
                       {(type === "tv" || data.genres) &&
                         this.getGenres(data.genre_ids, genres, data, type)}{" "}
                       <br />
                       {data.original_language}
                       <br />
-                      {<i style={{ fontSize: "1.5vh" }}>{data.tagline}</i>}
+                      {<i className="extend-tag-line">{data.tagline}</i>}
                     </span>
                   </div>
+                </div>
+                <div className="tv-overview" style={{ overflow: "auto" }}>
+                  {data.overview}
                 </div>
               </div>
             </div>
@@ -98,9 +106,6 @@ class MediaExtend extends Component {
     return (
       <Fragment>
         <div style={{ textAlign: "left", fontSize: "4vh" }}>Overview</div>{" "}
-        <div className="tv-overview" style={{ overflow: "auto" }}>
-          {overview}
-        </div>
       </Fragment>
     );
   }
