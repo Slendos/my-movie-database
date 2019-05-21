@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from "react";
-import { API_KEY } from "../../actions/types";
 import MediaCard from "../MediaCard/MediaCard";
 import { Pagination } from "antd";
 import "./discoverField.css";
 import "antd/dist/antd.css";
-const imgUrl = "https://image.tmdb.org/t/p/w200";
+// const imgUrl = "https://image.tmdb.org/t/p/w200";
 class DiscoverField extends Component {
   render() {
     const {

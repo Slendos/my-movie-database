@@ -80,8 +80,6 @@ class MediaExtend extends Component {
                       {(type === "tv" || data.genres) &&
                         this.getGenres(data.genre_ids, genres, data, type)}{" "}
                       <br />
-                      {data.number_of_seasons}
-                      {console.log(data, "number")}
                       {data.original_language}
                       <br />
                       {<i style={{ fontSize: "1.5vh" }}>{data.tagline}</i>}
@@ -113,6 +111,7 @@ class MediaExtend extends Component {
         {video.results && video.results[0] && (
           <div style={{ height: "40vh" }}>
             <iframe
+              title="trailer"
               frameBorder="0"
               style={{ height: "40vh" }}
               width="800"

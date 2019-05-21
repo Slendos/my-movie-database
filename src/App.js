@@ -1,12 +1,8 @@
 import React from "react";
 import { Provider } from "react-redux";
-import {
-  BrowserRouter,
-  HashRouter
-} from "react-router-dom/cjs/react-router-dom.min";
+import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 import { Route, Redirect, Switch } from "react-router-dom";
 
-import NavBar from "./components/NavBar.jsx/NavBar";
 import Footer from "./components/Footer/Footer";
 
 import Media from "./pages/Media/Media";

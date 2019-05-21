@@ -78,19 +78,6 @@ export default (state = initialState, action) => {
 
     case CLEAN_TV_DETAILS:
       return {
-        ...state,
-        tv: {
-          credits: [],
-          videos: [],
-          similar: [],
-          reviews: [],
-          recommendations: [],
-          episode_groups: []
-        }
-      };
-
-    case CLEAN_TV_DETAILS:
-      return {
         initialState
       };
     // case NEW_POST:

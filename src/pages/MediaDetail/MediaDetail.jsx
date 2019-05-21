@@ -56,14 +56,13 @@ class MediaDetail extends MediaExtend {
   render() {
     const data = this.props.detail;
     const { genres, movie } = this.props;
-    console.log("DATA", data, movie);
     let images = movie.images.backdrops && movie.images.backdrops.slice(0, 20);
     let gallery =
       images &&
       images.map(img => ({
         original: imgUrl + img.file_path
       }));
-    console.log("img", gallery);
+
     return (
       <main>
         <div style={{ width: "100%", height: "100vh" }}>

@@ -36,6 +36,7 @@ const SlideShow = ({ data }) => {
                 <img
                   src={smallImage + data[index].poster_path}
                   className="movie-preview"
+                  alt={data[index].title || data[index].name}
                 />
               </div>
               <div className="description-main">

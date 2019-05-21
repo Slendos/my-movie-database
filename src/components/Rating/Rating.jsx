@@ -1,7 +1,6 @@
 import React from "react";
 
 const Rating = ({ rating }) => {
-  console.log(rating);
   return rating > 0 ? (
     <span style={{ fontWeight: "bold" }}>
       {" "}

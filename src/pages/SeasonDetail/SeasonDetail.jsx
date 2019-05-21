@@ -12,7 +12,6 @@ class SeasonDetail extends Component {
   componentDidMount() {
     const data = this.props.location.state.data;
     const id = this.props.location.state.id;
-    const tv_id = data.id;
     const season_number = data.season_number;
 
     fetch(
