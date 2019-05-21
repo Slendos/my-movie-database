@@ -7,7 +7,11 @@
 ## Introduction
 
 I built movie database using [TMDb](https://www.themoviedb.org/) API<br/>
-You can browse through movies, tv seasons, tv episodes, people
+
+You can:
+
+- browse through <b>movies</b>, <b>tv seasons</b>, <b>tv episodes</b>, <b>people</b>
+- search movies by name
 
 #### Link
 
