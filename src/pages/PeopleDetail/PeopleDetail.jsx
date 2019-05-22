@@ -15,6 +15,7 @@ import "./peopleDetail.css";
 const imgUrl = "https://image.tmdb.org/t/p/w300";
 class PeopleDetail extends MediaExtend {
   componentDidMount() {
+    window.scroll(0, 0);
     const { fetchSingleMedia, fetchPersonDetails, location } = this.props;
     let id = location.state.data.id;
     fetchSingleMedia("person", id);

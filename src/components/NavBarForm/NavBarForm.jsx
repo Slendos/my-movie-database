@@ -17,7 +17,7 @@ class NavBarForm extends Component {
   render() {
     return (
       <div className="form-search">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="form-search-wrapper">
           <div className="form-input">
             <input
               type="text"

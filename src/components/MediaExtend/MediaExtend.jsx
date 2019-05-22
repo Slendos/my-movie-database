@@ -62,6 +62,9 @@ class MediaExtend extends Component {
               }}
               onLoad={() => this.setState({ loading: false })}
             >
+              {data.runtime && (
+                <div className="preview-runtime">{data.runtime} min</div>
+              )}
               <div className="preview-title-extend">
                 <div className="preview-image">
                   <img

@@ -15,6 +15,5 @@
 .tv-overview-wrapper {
   display: flex;
   width: 80%;
-  margin: 0 auto;
-  margin-top: 5vh;
+  margin: 3vh auto;
 }

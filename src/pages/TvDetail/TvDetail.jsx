@@ -59,7 +59,7 @@ class TvDetail extends MediaExtend {
         <div className="tv-overview-wrapper">
           {/* <div style={{ flex: 1 }}>{this.renderOverview(data.overview)}</div> */}
           {tvDetail.videos.results && (
-            <div style={{ paddingTop: "5vh", flex: 1 }}>
+            <div style={{ paddingTop: "2vh", flex: 1 }}>
               {this.renderVideo(tvDetail.videos)}
             </div>
           )}

@@ -4,13 +4,14 @@
 
 .movie-genres {
   text-align: left;
-  font-size: 1.2vh;
-  width: 90px;
+  font-size: 1.5vh;
+  /* width: 9vh; */
 }
 
 .movie-name {
   text-align: left;
-  width: 90px;
+  /* width: 6vh; */
+  margin-top: 1vh;
 }
 
 .comma {

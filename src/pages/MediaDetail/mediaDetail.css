@@ -31,22 +31,6 @@ article {
 .preview-image {
 }
 
-.review-wrapper {
-  height: 15vh;
-  width: 100%;
-  padding: 2vh;
-  background-color: #13111d;
-  margin: 2vh 0;
-}
-
-.review-wrapper:nth-child(odd) {
-  border-right: 4px solid grey;
-}
-
-.review-wrapper:nth-child(even) {
-  border-left: 4px solid grey;
-}
-
 .gallery-wrapper {
   height: 50%;
   width: 50%;

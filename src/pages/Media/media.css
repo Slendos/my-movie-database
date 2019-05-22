@@ -27,6 +27,7 @@
   width: 80%;
   margin: auto auto;
   margin-top: 10vh;
+  box-shadow: 10px 10px 0.5;
 }
 
 .navigation-div {
@@ -35,16 +36,22 @@
   text-transform: uppercase;
   font-size: 2vh;
   flex: 1;
-  border: 2px solid #2c2758;
-  border-radius: 100px;
+  margin: 0 2vh;
+  transform: skewX(-25deg);
   padding: 3vh 0;
-  margin: 0 1vh;
+  /* margin: 0 1vh; */
   background-color: #272a3ce3;
+}
+
+.navigation-div > span {
+  display: inline-block;
+  transform: skewX(25deg);
 }
 
 .active {
   background-color: rgb(21, 21, 63);
-  border: 2px solid grey;
+  /* border-top: 2px solid grey; */
+  border-bottom: 1px solid grey;
 }
 
 input {
@@ -52,6 +59,8 @@ input {
 }
 
 .navigation-div:hover {
+  border-bottom: 1px solid grey;
+
   background-color: rgb(21, 21, 63);
 }
 

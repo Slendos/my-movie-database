@@ -1,7 +1,7 @@
 .episode-wrapper {
   width: 28vh;
   height: 41.2vh;
-
+  margin: 0 auto;
   /* border: 2px solid white; */
 }
 
@@ -28,5 +28,9 @@
 .episode-wrapper-main {
   margin: 2vh 3vh;
   border: 2px solid black;
+  /* margin: 0 auto; */
   background-color: #20212b;
+  -webkit-box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.75);
 }

@@ -9,28 +9,28 @@ const MediaNavigation = ({ handleSwitch, media }) => {
           key="all"
           className={`navigation-div ${"all" === media && "active"}`}
         >
-          All
+          <span>All</span>
         </div>
         <div
           className={`navigation-div ${"tv" === media && "active"}`}
           onClick={() => handleSwitch("tv")}
           key="tv"
         >
-          TV
+          <span>TV</span>
         </div>
         <div
           className={`navigation-div ${"movie" === media && "active"}`}
           onClick={() => handleSwitch("movie")}
           key="movie"
         >
-          Movie
+          <span>Movie</span>
         </div>
         <div
           className={`navigation-div ${"person" === media && "active"}`}
           onClick={() => handleSwitch("person")}
           key="person"
         >
-          People
+          <span>People</span>
         </div>
       </div>
     </Fade>

@@ -23,6 +23,7 @@ class SeasonDetail extends Component {
   render() {
     const data = this.props.location.state.data;
     const { seasonDetail } = this.state;
+    console.log(seasonDetail);
 
     return (
       <div style={{ paddingTop: "5vh", minHeight: "100%" }}>
@@ -30,8 +31,12 @@ class SeasonDetail extends Component {
           <img
             src={smallUrl + data.poster_path}
             alt=""
-            className="people-preview"
-            style={{ display: "inline-block", verticalAlign: "top" }}
+            className="people-preview season-preview"
+            style={{
+              display: "inline-block",
+              verticalAlign: "top",
+              textAlign: "left"
+            }}
           />
           <div className="season-description">
             <div className="season-title">{data.name}</div>
