@@ -27,3 +27,7 @@ html {
   min-height: 100% !important;
   background-color: #161130;
 }
+
+.navbar {
+  min-height: 1vh !important;
+}
