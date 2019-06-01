@@ -14,7 +14,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import TvDetail from "./pages/TvDetail/TvDetail";
 import PeopleDetail from "./pages/PeopleDetail/PeopleDetail";
 import SeasonDetail from "./pages/SeasonDetail/SeasonDetail";
-import ComponentToHide from "./components/ComponentToHide/ComponentToHide";
+import ComponentToHideNav from "./components/ComponentToHide/ComponentToHide";
 
 import store from "./store";
 
@@ -26,7 +26,7 @@ function App() {
       <div className="App" id="dimScreen">
         <Provider store={store}>
           <div>
-            <ComponentToHide />
+            <ComponentToHideNav />
             <Switch>
               <Route path="/" exact component={() => <Media />} />
               <Route path="/movie/:id" component={MediaDetail} />
