@@ -1,6 +1,5 @@
 import React from "react";
 import MediaExtend from "../../components/MediaExtend/MediaExtend";
-import LazyLoad from "react-lazyload";
 import { connect } from "react-redux";
 
 import {
@@ -12,25 +11,17 @@ import { fetchPersonDetails } from "../../actions/mediaActions";
 import SwiperContainer from "../../components/SwiperContainer/SwiperContainer";
 
 import "./peopleDetail.css";
-const imgUrl = "https://image.tmdb.org/t/p/w300";
+import PersonProfile from "../../components/PersonProfile/PersonProfile";
 class PeopleDetail extends MediaExtend {
   componentDidMount() {
-    window.scroll(0, 0);
-    const { fetchSingleMedia, fetchPersonDetails, location } = this.props;
-    let id = location.state.data.id;
-    fetchSingleMedia("person", id);
-    fetchPersonDetails(id, "tv_credits");
-    fetchPersonDetails(id, "movie_credits");
+    const { location } = this.props;
+    this.fetchData(location);
   }
 
   componentDidUpdate(prevProps) {
-    window.scroll(0, 0);
-    const { fetchSingleMedia, fetchPersonDetails, location } = this.props;
-    let id = location.state.data.id;
+    const { location } = this.props;
     if (prevProps.location.state.data.id !== location.state.data.id) {
-      fetchSingleMedia("person", id);
-      fetchPersonDetails(id, "tv_credits");
-      fetchPersonDetails(id, "movie_credits");
+      this.fetchData(location);
     }
   }
 
@@ -38,34 +29,21 @@ class PeopleDetail extends MediaExtend {
     this.props.cleanDetails();
   }
 
+  fetchData = location => {
+    window.scroll(0, 0);
+    const { fetchSingleMedia, fetchPersonDetails } = this.props;
+    let id = location.state.data.id;
+    fetchSingleMedia("person", id);
+    fetchPersonDetails(id, "tv_credits");
+    fetchPersonDetails(id, "movie_credits");
+  };
+
   render() {
-    const data = this.props.detail;
-    const { personDetails } = this.props;
+    const { personDetails, detail } = this.props;
 
     return (
       <div style={{ paddingTop: "5vh" }}>
-        <div
-          className="people-wrapper"
-          style={{ textAlign: "left", minHeight: "100%" }}
-        >
-          <div className="people-image-wrapper">
-            <LazyLoad height={300}>
-              <img
-                src={imgUrl + data.profile_path}
-                alt=""
-                className="people-preview"
-              />
-            </LazyLoad>
-          </div>
-          <div className="people-block">
-            <span className="people-name">{data.name}</span> <br />
-            <span className="people-age">*{data.birthday}</span>
-            <div className="biography-about">About</div>
-            <div className="people-biography">
-              {data.biography || "there is no biography"}
-            </div>
-          </div>
-        </div>
+        <PersonProfile data={detail} />
         <SwiperContainer
           movie={personDetails.movie_credits.cast}
           genres={null}

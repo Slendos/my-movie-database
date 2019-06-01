@@ -13,9 +13,8 @@ class Discover extends Component {
   componentDidMount() {
     window.scroll(0, 0);
     const text = this.props.location.state && this.props.location.state.data;
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${text}`
-    )
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${text}`;
+    fetch(url)
       .then(blob => blob.json())
       .then(data => {
         this.setState({ search: data });

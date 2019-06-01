@@ -14,8 +14,10 @@ const Footer = () => {
         </a>
         <div className="inline">
           <div className="credits">
-            This product uses the TMDb API but is not endorsed or certified by
-            TMDb.
+            <p>
+              This product uses the TMDb API but is not endorsed or certified by
+              TMDb.
+            </p>
           </div>
         </div>
       </div>

@@ -3,8 +3,10 @@ import { API_KEY } from "../../actions/types";
 import { connect } from "react-redux";
 import Episode from "../../components/Episode/Episode";
 import "./seasonDetail.css";
+
 // const imgUrl = "https://image.tmdb.org/t/p/original";
 const smallUrl = "https://image.tmdb.org/t/p/w500";
+
 class SeasonDetail extends Component {
   state = {
     seasonDetail: null

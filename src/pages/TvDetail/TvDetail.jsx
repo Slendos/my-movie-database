@@ -13,33 +13,34 @@ import MediaExtend from "../../components/MediaExtend/MediaExtend";
 
 import "./tvDetail.css";
 class TvDetail extends MediaExtend {
-  componentDidMount() {
-    window.scroll(0, 0);
-    const { fetchSingleMedia, fetchTvDetails, fetchGenres } = this.props;
+  fetchData = id => {
+    const { fetchSingleMedia, fetchTvDetails } = this.props;
 
-    let id = this.props.location.state.data.id;
     fetchSingleMedia("tv", id);
-    fetchGenres();
-    fetchTvDetails(id, "credits");
     fetchTvDetails(id, "videos");
+    fetchTvDetails(id, "credits");
     fetchTvDetails(id, "similar");
     fetchTvDetails(id, "reviews");
     fetchTvDetails(id, "recommendations");
+  };
+
+  componentDidMount() {
+    window.scroll(0, 0);
+    const { fetchGenres, location } = this.props;
+    let id = location.state.data.id;
+
+    fetchGenres();
+    this.fetchData(id);
     // this.props.fetchTvEpisodes(id);
   }
 
   componentDidUpdate(prevProps) {
-    const { fetchSingleMedia, fetchTvDetails, location } = this.props;
+    const { location } = this.props;
     let id = location.state.data.id;
 
     if (prevProps.location.state.data.id !== location.state.data.id) {
       window.scroll(0, 0);
-      fetchSingleMedia("tv", id);
-      fetchTvDetails(id, "videos");
-      fetchTvDetails(id, "credits");
-      fetchTvDetails(id, "similar");
-      fetchTvDetails(id, "reviews");
-      fetchTvDetails(id, "recommendations");
+      this.fetchData(id);
       // this.props.fetchTvEpisodes(id);
     }
   }
@@ -49,15 +50,14 @@ class TvDetail extends MediaExtend {
   }
 
   render() {
-    const { data } = this.props.location.state;
-    const { genres, tvDetail, detail } = this.props;
+    const { genres, tvDetail, detail, location } = this.props;
+    const { data } = location.state;
     const { seasons } = detail;
 
     return (
       <div style={{ paddingTop: "5vh" }}>
         {this.renderBackground(data, genres, "tv")}
         <div className="tv-overview-wrapper">
-          {/* <div style={{ flex: 1 }}>{this.renderOverview(data.overview)}</div> */}
           {tvDetail.videos.results && (
             <div style={{ paddingTop: "2vh", flex: 1 }}>
               {this.renderVideo(tvDetail.videos)}

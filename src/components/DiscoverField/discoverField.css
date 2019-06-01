@@ -20,3 +20,9 @@
   margin-bottom: 4vh;
   justify-content: center;
 }
+
+.discover-movie-item-wrapper {
+  position: relative !important;
+  width: 15vh !important;
+  /* padding-left: 15vh; */
+}

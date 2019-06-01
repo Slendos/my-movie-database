@@ -6,6 +6,8 @@
   /* border: 2px solid #524d4d; */
   background: rgb(0, 0, 0, 0.4);
   border-radius: 1.5vh;
+  text-align: left;
+  min-height: 100%;
 }
 
 .people-block {

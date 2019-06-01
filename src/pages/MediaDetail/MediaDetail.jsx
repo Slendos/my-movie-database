@@ -17,35 +17,29 @@ import "react-image-gallery/styles/css/image-gallery.css";
 const imgUrl = "https://image.tmdb.org/t/p/original";
 // const smallUrl = "https://image.tmdb.org/t/p/w200";
 class MediaDetail extends MediaExtend {
-  componentDidMount() {
-    const {
-      fetchSingleMedia,
-      fetchMovieDetails,
-      fetchGenres,
-      location
-    } = this.props;
-    window.scroll(0, 0);
+  fetchData = location => {
+    const { fetchSingleMedia, fetchMovieDetails } = this.props;
     let id = location.state.data.id;
     fetchSingleMedia("movie", id);
-    fetchGenres();
     fetchMovieDetails(id, "credits");
     fetchMovieDetails(id, "similar");
     fetchMovieDetails(id, "reviews");
     fetchMovieDetails(id, "videos");
     fetchMovieDetails(id, "images");
+  };
+
+  componentDidMount() {
+    const { fetchGenres, location } = this.props;
+    window.scroll(0, 0);
+    fetchGenres();
+    this.fetchData(location);
   }
 
   componentDidUpdate(prevProps) {
     window.scroll(0, 0);
-    const { fetchSingleMedia, fetchMovieDetails, location } = this.props;
-    let id = location.state.data.id;
+    const { location } = this.props;
     if (prevProps.location.state.data.id !== location.state.data.id) {
-      fetchSingleMedia("movie", id);
-      fetchMovieDetails(id, "credits");
-      fetchMovieDetails(id, "similar");
-      fetchMovieDetails(id, "reviews");
-      fetchMovieDetails(id, "videos");
-      fetchMovieDetails(id, "images");
+      this.fetchData(location);
     }
   }
 

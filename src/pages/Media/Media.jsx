@@ -1,12 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 
-import {
-  fetchMedia,
-  fetchMovie,
-  fetchTv,
-  fetchPerson
-} from "../../actions/mediaActions";
+import { fetchMovie, fetchTv, fetchPerson } from "../../actions/mediaActions";
 import { fetchGenres } from "../../actions/genresActions";
 
 import SlideShow from "../../components/SlideShow/SlideShow";
@@ -20,7 +15,6 @@ import "./media.css";
 // PERSON TYPES: latest, popular
 class Media extends Component {
   state = {
-    time: "week",
     media: "movie"
   };
 
@@ -48,7 +42,7 @@ class Media extends Component {
   };
 
   render() {
-    const { genres } = this.props;
+    const { genres, movie, tv, person } = this.props;
     const { media } = this.state;
     const movieTypes = ["popular", "top_rated", "upcoming", "now_playing"];
     const movieTitles = ["popular", "top rated", "upcoming", "now playing"];
@@ -59,20 +53,20 @@ class Media extends Component {
 
     return (
       <div>
-        <div style={{ height: "100vh", width: "100%" }}>
+        <section className="section-slideshow">
           <div className="slideshow-wrapper-main">
-            {this.props.movie["now_playing"] &&
-              this.props.movie["now_playing"].results !== undefined && (
-                <SlideShow data={this.props.movie["now_playing"].results} />
+            {movie["now_playing"] &&
+              movie["now_playing"].results !== undefined && (
+                <SlideShow data={movie["now_playing"].results} />
               )}
           </div>
-        </div>
+        </section>
 
         <Fragment>
           <MediaNavigation handleSwitch={this.handleSwitch} media={media} />
           {(media === "movie" || media === "all") && (
             <MediaSwiper
-              mediaType={this.props.movie}
+              mediaType={movie}
               titles={movieTitles}
               types={movieTypes}
               imgPath="poster_path"
@@ -83,7 +77,7 @@ class Media extends Component {
           )}
           {(media === "tv" || media === "all") && (
             <MediaSwiper
-              mediaType={this.props.tv}
+              mediaType={tv}
               titles={tvTitles}
               types={tvTypes}
               imgPath="poster_path"
@@ -94,7 +88,7 @@ class Media extends Component {
           )}
           {(media === "person" || media === "all") && (
             <MediaSwiper
-              mediaType={this.props.person}
+              mediaType={person}
               titles={personTitles}
               types={personTypes}
               imgPath="profile_path"
@@ -109,10 +103,7 @@ class Media extends Component {
 }
 
 const mapStatetoProps = state => ({
-  week: state.media.week,
-  day: state.media.day,
   movie: state.movie.movie,
-  all: state.media.all,
   person: state.person.person,
   tv: state.tv.tv,
   genres: state.genres.list
@@ -120,5 +111,5 @@ const mapStatetoProps = state => ({
 
 export default connect(
   mapStatetoProps,
-  { fetchMedia, fetchGenres, fetchMovie, fetchPerson, fetchTv }
+  { fetchGenres, fetchMovie, fetchPerson, fetchTv }
 )(Media);

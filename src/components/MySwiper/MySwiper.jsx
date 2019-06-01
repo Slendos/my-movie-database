@@ -35,7 +35,7 @@ const MySwiper = ({ movies, genres, imgPath, type, slides = 8, movieId }) => {
     }
   };
   const params = {
-    slidesPerView: getNumberOfSlides(movies),
+    slidesPerView: 8,
     shouldSwiperUpdate: true,
     rebuildOnUpdate: true,
     observer: true,

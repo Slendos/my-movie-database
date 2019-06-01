@@ -4,7 +4,6 @@ import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 import { Route, Redirect, Switch } from "react-router-dom";
 
 import Footer from "./components/Footer/Footer";
-
 import Media from "./pages/Media/Media";
 import Discover from "./pages/Discover/Discover";
 import MediaDetail from "./pages/MediaDetail/MediaDetail";
@@ -13,9 +12,11 @@ import TvDetail from "./pages/TvDetail/TvDetail";
 import PeopleDetail from "./pages/PeopleDetail/PeopleDetail";
 import SeasonDetail from "./pages/SeasonDetail/SeasonDetail";
 import ComponentToHide from "./components/ComponentToHide/ComponentToHide";
+
 import store from "./store";
+
 import "./App.css";
-// basename={process.env.PUBLIC_URL}
+
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
