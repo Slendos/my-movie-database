@@ -1,6 +1,9 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
+import {
+  BrowserRouter,
+  HashRouter
+} from "react-router-dom/cjs/react-router-dom.min";
 import { Route, Redirect, Switch } from "react-router-dom";
 
 import Footer from "./components/Footer/Footer";
@@ -19,7 +22,7 @@ import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <div className="App" id="dimScreen">
         <Provider store={store}>
           <div>
