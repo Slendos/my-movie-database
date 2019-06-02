@@ -1,6 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
+import { BrowserRouter } from "react-router-dom";
 import { Route, Redirect, Switch } from "react-router-dom";
 
 import Footer from "./components/Footer/Footer";
