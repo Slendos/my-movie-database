@@ -25,7 +25,7 @@ function App() {
           <div>
             <ComponentToHideNav />
             <Switch>
-              <Route path="/" exact component={() => <Media />} />
+              <Route path="/" exact component={Media} />
               <Route path="/movie/:id" component={MediaDetail} />
               <Route path="/tv/:id" exact component={TvDetail} />
               <Route
