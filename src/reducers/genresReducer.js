@@ -11,11 +11,6 @@ export default (state = initialState, action) => {
         ...state,
         list: action.payload.genres
       };
-    // case NEW_POST:
-    //   return {
-    //     ...state,
-    //     item: action.payload
-    //   };
     default:
       return state;
   }

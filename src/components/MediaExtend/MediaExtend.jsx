@@ -12,7 +12,7 @@ class MediaExtend extends Component {
     let finished = false;
     if (type === "movie")
       return data.genres.map((genre, index) => {
-        if (finished) return;
+        if (finished) return null;
         if (index >= 1) {
           finished = true;
         }
@@ -25,7 +25,7 @@ class MediaExtend extends Component {
       });
     else if (type === "tv") {
       return ids.map((id, index) => {
-        if (finished) return;
+        if (finished) return null;
         if (index >= 1) {
           finished = true;
         }

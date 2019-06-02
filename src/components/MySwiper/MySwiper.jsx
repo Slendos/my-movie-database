@@ -5,11 +5,11 @@ import "./mySwiper.css";
 import MediaCard from "../MediaCard/MediaCard";
 
 const MySwiper = ({ movies, genres, imgPath, type, slides = 8, movieId }) => {
-  const getNumberOfSlides = number => {
-    if (!number) return 1;
-    if (number.length < 8) return number.length;
-    else return 8;
-  };
+  // const getNumberOfSlides = number => {
+  //   if (!number) return 1;
+  //   if (number.length < 8) return number.length;
+  //   else return 8;
+  // };
 
   const myBreakPoints = {
     320: {

@@ -15,7 +15,7 @@ const LazyImage = ({ url, imgClass, data, genres, type }) => {
   const getGenres = (ids, genres) => {
     let finished = false;
     return ids.map((id, index) => {
-      if (finished) return;
+      if (finished) return null;
       if (index >= 1) {
         finished = true;
       }
@@ -34,7 +34,7 @@ const LazyImage = ({ url, imgClass, data, genres, type }) => {
       {!error && (
         <img
           src={!error ? url : "../../images/blank_profile.png"}
-          alt="image"
+          alt={image}
           className={loading ? imgClass : "loadingImg"}
           onLoad={() => setLoading(true)}
           onError={() => {
@@ -45,6 +45,7 @@ const LazyImage = ({ url, imgClass, data, genres, type }) => {
       )}
       {error && (
         <img
+          alt={image}
           src={image}
           className={imgClass}
           style={{ height: "2.5vh", width: "15vh" }}

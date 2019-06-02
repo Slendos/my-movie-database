@@ -80,11 +80,7 @@ export default (state = initialState, action) => {
       return {
         initialState
       };
-    // case NEW_POST:
-    //   return {
-    //     ...state,
-    //     item: action.payload
-    //   };
+
     default:
       return state;
   }
