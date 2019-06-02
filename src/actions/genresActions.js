@@ -18,7 +18,7 @@ export const fetchGenres = () => async dispatch => {
     .then(res => res.json())
     .then(genres => {
       const allGenres = {
-        genres: genres.genres.concat(movieGenres.genres)
+        genres: genres && genres.genres.concat(movieGenres.genres)
       };
       dispatch({
         type: FETCH_GENRES,
