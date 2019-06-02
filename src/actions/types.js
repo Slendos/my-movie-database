@@ -11,5 +11,6 @@ export const FETCH_TV_CREDITS = "FETCH_TV_CREDITS";
 export const FETCH_TV_EPISODES = "FETCH_TV_EPISODES";
 export const CLEAN_TV_DETAILS = "CLEAN_TV_DETAILS";
 export const FETCH_MOVIE_CREDITS = "FETCH_MOVIE_CREDITS";
-export const API_KEY = process.env.REACT_APP_TMBD_API_KEY;
 export const CLEAN_DETAILS = "CLEAN_DETAILS";
+
+export const API_KEY = process.env.REACT_APP_TMBD_API_KEY;
