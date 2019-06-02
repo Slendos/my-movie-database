@@ -15,7 +15,7 @@ const LazyImage = ({ url, imgClass, data, genres, type }) => {
   const getGenres = (ids, genres) => {
     let finished = false;
     return ids.map((id, index) => {
-      if (finished) return null;
+      if (finished) return;
       if (index >= 1) {
         finished = true;
       }
