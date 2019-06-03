@@ -24,7 +24,7 @@ You can:
 
 - HTML
 - CSS
-- Javascript
+- JavaScript
 
 ### Libraries
 
