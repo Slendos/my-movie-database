@@ -24,6 +24,7 @@ class NavBarForm extends Component {
               className="input-text"
               value={this.state.text}
               onChange={this.handleChange}
+              placeholder="Search movies..."
             />
           </div>
           <div className="form-input form-button">
