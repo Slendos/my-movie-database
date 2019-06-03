@@ -15,7 +15,7 @@ You can:
 
 #### Link
 
-- (https://my-react-moviedb.herokuapp.com/) <i>!app sometimes throw error after load but runs fine after <b>reload</b>!</i>
+- https://slendos.github.io/my-movie-database/
   tested browser: Chrome
 
 ## Build with
